@@ -2,30 +2,27 @@
 
 /**
  * @ngdoc overview
- * @name kanshuWebApp
+ * @name webApp
  * @description
- * # kanshuWebApp
+ * # webApp
  *
  * Main module of the application.
  */
 angular
-  .module('kanshuWebApp', [
+  .module('webApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'webApp.services'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'views/articlesFeed.html',
+        controller: 'ArticlesFeedController'
       })
       .otherwise({
         redirectTo: '/'
