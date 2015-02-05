@@ -21,6 +21,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
+        templateUrl: 'views/home.html'
+      })
+      .when('/articles', {
         templateUrl: 'views/articlesFeed.html',
         controller: 'ArticlesFeedCtrl'
       })
