@@ -14,7 +14,7 @@ Visit [https://assembly.com](https://assembly.com) to learn more.
 
 ## Getting Started
 
-Kanshu-web is an [AngularJS](https://angularjs.org/) web application, using [npm](https://www.npmjs.com/) and [Bower](http://bower.io/) to manage packages and [Grunt](http://gruntjs.com/) for automation! 
+Kanshu-web is an [AngularJS](https://angularjs.org/) web application, using [npm](https://www.npmjs.com/) and [Bower](http://bower.io/) to manage packages and [Grunt](http://gruntjs.com/) for automation.
 
 [Compass](http://compass-style.org/) and [Sass](http://sass-lang.com/) are used to simplify CSS maintenance. 
 
