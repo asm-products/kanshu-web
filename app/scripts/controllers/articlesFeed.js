@@ -2,15 +2,15 @@
 
 /**
  * @ngdoc function
- * @name webApp.controller: ArticlesFeedController
+ * @name kanshuWebApp: ArticlesFeedController
  * @description
- * # ArticlesFeedController
+ * # ArticlesFeedCtrl
  * Controller of the articles feed.
  */
-angular.module('webApp')
-	.controller('ArticlesFeedController', function ($scope, ArticlesFeedService) {
+angular.module('kanshuWebApp')
+	.controller('ArticlesFeedCtrl', function ($scope, ArticlesFeedService) {
 
-		$scope.data = [];
+		$scope.feed = ['Initialize the feed'];
 
 		ArticlesFeedService.getArticles().success(function (data) {
 			$scope.feed = {
@@ -21,4 +21,10 @@ angular.module('webApp')
 			console.error('Error fetching feed:', data);
 		});
 
+	    $scope.awesomeThings = [
+	      'HTML5 Boilerplate',
+	      'AngularJS',
+	      'Karma'
+	    ];
+    
 	});

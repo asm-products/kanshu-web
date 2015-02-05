@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name webApp.controller:MainCtrl
+ * @name kanshuWebApp.services: ArticlesFeedService
  * @description
- * # MainCtrl
- * Controller of the webApp
+ * # ArticlesFeedService
+ * Service of the kanshuWebApp to get articles from server.
  */
- angular.module('webApp.services', [])
+ angular.module('kanshuWebApp.services', [])
  	.factory('ArticlesFeedService', function ($http) {
 
  		var articlesFeedAPI = {};
