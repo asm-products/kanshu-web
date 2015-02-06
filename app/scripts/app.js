@@ -27,6 +27,10 @@ angular
         templateUrl: 'views/articlesFeed.html',
         controller: 'ArticlesFeedCtrl'
       })
+      .when('/article', {
+        templateUrl: 'views/article.html',
+        controller: 'ArticleCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

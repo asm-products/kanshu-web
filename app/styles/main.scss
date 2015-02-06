@@ -41,6 +41,33 @@ body {
   }
 }
 
+/* Article Screen */
+.article {
+  margin: 0px;
+  padding: 0px;
+  
+  p, div, span {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .phrase {  
+    display: inline-block;
+    font-family: Helvetica, Arial, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif; 
+    text-align: center;
+    padding: 2px 4px 2px 0px;     
+    
+    .hanzi {
+      margin-top: -3px;
+      font-size: 180%;
+    }
+    
+    .punc{
+      display: inline-block;  
+    }
+  }
+}
+
 /* Custom page footer */
 .footer {
   padding-top: 19px;

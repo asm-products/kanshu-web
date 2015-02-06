@@ -1,0 +1,9 @@
+<div class="article" ng-controller="ArticleCtrl">
+  <h1>Article</h1>
+  <div ng-repeat="sentence in sample">
+  	<div class="phrase" ng-repeat="phrase in sentence">
+  		<span class="punc">{{phrase[0] == 'punc: ' ? '' : phrase[2]}}</span>
+		<p class="hanzi">{{phrase[0] == 'punc: ' ? phrase[1][0] : phrase[0]}}</p>  		
+  	</div>
+  </div>
+</div>
