@@ -70,7 +70,7 @@ body {
 
 /* Dictionary Popover */
 #dictionaryPopover {
-  position: fixed;
+  position: absolute;
   max-width: 200px;
   background-color: #d4554b;
   color: white;
@@ -81,7 +81,7 @@ body {
 
 #popoverTriangle1 {
   content: "";
-  position: fixed;
+  position: absolute;
   bottom: -12px; /* value = - border-top-width - border-bottom-width */
   left: 0px;
   border: 0;
@@ -96,7 +96,7 @@ body {
 
 #popoverTriangle2 {
   content: "";
-  position: fixed;
+  position: absolute;
   bottom: -12px; /* value = - border-top-width - border-bottom-width */
   left: 0px;
   border: 0;

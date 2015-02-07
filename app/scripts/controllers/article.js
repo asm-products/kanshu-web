@@ -17,7 +17,7 @@ angular.module('kanshuWebApp')
 
     $scope.showingInlineDefinitions = true;
 
-    $scope.dictionaryPopover = {entry: 'Hi'};
+    $scope.dictionaryPopover = {entry: 'Hi', position: {"top": 0, "left": 0}, visible: false};
 
     $scope.toggle = function() {
     	$scope.showingInlineDefinitions = !$scope.showingInlineDefinitions;
