@@ -1,7 +1,11 @@
 <div class="article" ng-controller="ArticleCtrl">
   <h1>Article</h1>
+  <div id="dictionaryPopover">{{dictionaryPopover.entry}}</div>
+  <div id="popoverTriangle1"></div>
+  <div id="popoverTriangle2"></div>
+  <button id="inline-def-button" type="button" class="btn btn-default" ng-click="toggle()">Toggle inline definitions</button>
   <div ng-repeat="sentence in sample">
-  	<div dir-phrase class="phrase" p="phrase" ng-repeat="phrase in sentence">
+  	<div dir-phrase class="phrase" p="phrase" showing-inline-definitions="showingInlineDefinitions" dictionary-popover="dictionaryPopover" ng-repeat="phrase in sentence track by $index">
   	</div>
   </div>
 </div>

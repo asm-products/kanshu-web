@@ -62,10 +62,51 @@ body {
       font-size: 180%;
     }
     
-    .punc{
+    .punc {
       display: inline-block;  
     }
   }
+}
+
+/* Dictionary Popover */
+#dictionaryPopover {
+  position: fixed;
+  max-width: 200px;
+  background-color: #d4554b;
+  color: white;
+  padding: 10px;  
+  border-radius: 5px;
+  display: none;
+}
+
+#popoverTriangle1 {
+  content: "";
+  position: fixed;
+  bottom: -12px; /* value = - border-top-width - border-bottom-width */
+  left: 0px;
+  border: 0;
+  border-right-width: 20px; /* vary this value to change the angle of the vertex */
+  border-bottom-width: 12px; /* triangle height */
+  height: 0px; 
+  border-style: solid;
+  border-color: transparent #d4554b;
+  width: 0;
+  display: none;
+}
+
+#popoverTriangle2 {
+  content: "";
+  position: fixed;
+  bottom: -12px; /* value = - border-top-width - border-bottom-width */
+  left: 0px;
+  border: 0;
+  border-bottom-width: 12px; /* triangle height */
+  border-right-width: 5px; /* vary this value to change the angle of the vertex */
+  height: 0px; 
+  border-style: solid;
+  border-color: transparent #ffffff;
+  width: 0;
+  display: none;
 }
 
 /* Custom page footer */

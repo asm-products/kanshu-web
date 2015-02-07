@@ -15,7 +15,22 @@ angular.module('kanshuWebApp')
       'Karma'
     ];
 
+    $scope.showingInlineDefinitions = true;
 
+    $scope.dictionaryPopover = {entry: 'Hi'};
+
+    $scope.toggle = function() {
+    	$scope.showingInlineDefinitions = !$scope.showingInlineDefinitions;
+    	if($scope.showingInlineDefinitions){
+    		$(".inlineDef").css("display: inline-block");
+    	}else{
+       		$(".inlineDef").css("display: none");
+    	}
+    }
+
+    $scope.change = function() {
+    	$scope.dictionaryPopover.entry = "Changed"
+    }
 
 
 
