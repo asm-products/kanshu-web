@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'kanshuWebApp.services'
+    'kanshuWebApp.services',
+    'ngMaterial'
   ])
   .config(function ($routeProvider) {
     $routeProvider

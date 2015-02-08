@@ -2,60 +2,74 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Kanshu, Reading Chinese Should Be This Easy</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="kanshuWebApp">
+  <body ng-app="kanshuWebApp" layout="column" layout-fill>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="pull-left" href="#/"><img src="images/logo_with_text.png"></img></a>
+    <div class="header" ng-controller="MainCtrl">
+      <md-toolbar>
+        <div class="navbar-default" role="navigation">
+          <div class="pull-left">
+            
+            <div id="menuButton" type="button" ng-click="toggleSidenav()">
+              <img src="images/ic_menu_48px.svg"></img>
+            </div>
+          
           </div>
+          <div class="navbar-right">
+            
+            <a class="pull-right" href="#/">
+              <img src="images/logo_with_text.png"></img>
+            </a>
+          
+          </div>
+        </div>
+      </md-toolbar>
+    </div>
+    
+    <section layout="row" flex>
+      <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
+        <div ng-controller="LeftSidenavCtrl">
+          <div class="sidenavUser">
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          </div>
+          <div ng-repeat="group in rows">
+            <md-button class="sidenavRow" ng-repeat="item in group">
+              <img ng-src="{{item.src}}"></img>
+              <span>{{item.text}}</span>
+            </md-button>
+            <md-divider></md-divider>
+          </div>
+        </div>
+      </md-sidenav>  
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/articles">Articles</a></li>
-              <li><a ng-href="#/article">Article</a></li>
-            </ul>
+      <div flex>
+        <div id="viewContainer" class="md-padding container">
+          <div ng-view=""></div>
+        </div>
+
+        <div class="footer">
+          <div class="container">
+            <p>Kanshu all rights reserved &copy 2015</p>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="container" id="viewContainer">
-    <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p>Kanshu all rights reserved &copy 2015</p>
-      </div>
-    </div>
+    </section>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -80,6 +94,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -90,6 +106,8 @@
         <script src="scripts/controllers/article.js"></script>
         <script src="scripts/directives/phrase.js"></script>
         <script src="scripts/directives/dictionarypopover.js"></script>
+        <script src="scripts/controllers/leftSidenav.js"></script>
+        <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
 </body>
 </html>

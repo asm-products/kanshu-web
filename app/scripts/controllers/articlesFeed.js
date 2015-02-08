@@ -14,7 +14,7 @@ angular.module('kanshuWebApp')
 
 		ArticlesFeedService.getArticles().success(function (data) {
 			$scope.feed = {
-				articles: data
+				articles: data,
 			};
 		})
 		.error(function (data) {
