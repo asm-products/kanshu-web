@@ -21,28 +21,18 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header" ng-controller="MainCtrl">
       <md-toolbar>
         <div class="navbar-default" role="navigation">
 
-          <div class="navbar-header">
+          <div class="pull-left">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="pull-left" href="#/"><img src="images/logo_with_text.png"></img></a>
+            <div id="menuButton" type="button" ng-click="toggleSidenav()">
+              <img src="images/ic_menu_48px.svg"></img>
+            </div>
           </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/articles">Articles</a></li>
-            </ul>
+          <div class="navbar-right">
+            <a class="pull-right" href="#/"><img src="images/logo_with_text.png"></img></a>
           </div>
         
         </div>
@@ -51,10 +41,10 @@
     </div>
     
     <section layout="row" flex>
-      <md-sidenav md-is-locked-open="$media('min-width: 333px')" md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
+      <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
         <div ng-controller="LeftSidenavCtrl">
           <div class="sidenavUser">
-            
+
           </div>
           <div ng-repeat="group in rows">
             <div class="sidenavRow" ng-repeat="item in group">
@@ -112,6 +102,7 @@
         <script src="scripts/services/articlesFeedService.js"></script>
         <script src="scripts/controllers/articlesFeed.js"></script>
         <script src="scripts/controllers/leftSidenav.js"></script>
+        <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
 </body>
 </html>

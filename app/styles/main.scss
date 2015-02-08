@@ -154,8 +154,11 @@ $dropDown       : false;
     &:hover {
       color: $colHighlight; }
   }
-  .navbar-header{
+  .navbar-header {
     min-height: inherit;
+  }
+  .navbar-right {
+    margin: 0px;
   }
 }
 @media (max-width: 767px) {
