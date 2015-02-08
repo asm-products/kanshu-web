@@ -47,10 +47,10 @@
 
           </div>
           <div ng-repeat="group in rows">
-            <div class="sidenavRow" ng-repeat="item in group">
+            <md-button class="sidenavRow" ng-repeat="item in group">
               <img ng-src="{{item.src}}"></img>
               <span>{{item.text}}</span>
-            </div>
+            </md-button>
             <md-divider></md-divider>
           </div>
         </div>
