@@ -15,7 +15,6 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
 .marketing,
 .footer {
   padding-left: 15px;
@@ -23,9 +22,11 @@ body {
 }
 
 /* Custom page header */
+$navbarHeight   : 64px;
+
 .header {
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -36,9 +37,24 @@ body {
   }
 
   img {
-    max-height: 40px;
-    margin: 5px 10px;
+    max-height: $navbarHeight - 16px;
+    margin: 8px 10px;
   }
+}
+
+/* Sidenav */
+.sidenavRow {
+  padding: 10px 25px;
+
+  img {
+    max-width: 30px;
+    margin-right: 20px;
+  }
+}
+
+.sidenavUser {
+  background-color: #e75f5b;
+  min-height: 150px;
 }
 
 /* Custom page footer */
@@ -73,6 +89,87 @@ body {
   }
 }
 
+$bgDefault      : #ffffff;
+$bgHighlight    : #e75f5b;
+$colDefault     : #000000;
+$colHighlight   : #ffffff;
+$dropDown       : false;
+.navbar-default {
+  background-color: $bgDefault;
+  border: none;
+  border-radius: 0px;
+  margin: 0px;
+  padding: 0px;
+  min-height: inherit;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus { 
+      color: $colHighlight; 
+      }
+    min-height: inherit;
+  }
+  .navbar-text {
+    color: $colDefault; 
+    min-height: inherit;
+  }
+  .navbar-nav {
+    min-height: inherit;
+
+    > li {
+      > a {
+        line-height: $navbarHeight - 30px;
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li > a {
+            color: $colDefault;
+            &:hover,  &:focus {
+              color: $colHighlight;
+              background-color: $bgHighlight; }}
+          .divider {
+            background-color: $bgHighlight;}}}
+    }
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $colDefault;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }
+  }
+  .navbar-header{
+    min-height: inherit;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus, {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -86,10 +183,7 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
