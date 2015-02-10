@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="kanshuWebApp" layout="column" layout-fill>
+  <body ng-app="kanshuWebApp" layout="column" layout-fill ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header" ng-controller="MainCtrl">
-      <md-toolbar>
+    <div class="header">
+      <md-toolbar class="fixed">
         <div class="navbar-default" role="navigation">
           <div class="pull-left">
             
@@ -42,23 +42,25 @@
       </md-toolbar>
     </div>
     
-    <section layout="row" flex>
-      <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
-        <div ng-controller="LeftSidenavCtrl">
-          <div class="sidenavUser">
+    <section class="underNavbar" layout="row" flex>
+      <div class="sidenavFixed">
+        <md-sidenav md-is-locked-open="shouldBeLockedOpen" md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
+          <div ng-controller="LeftSidenavCtrl">
+            <div class="sidenavUser">
 
+            </div>
+            <div ng-repeat="group in rows">
+              <md-button class="sidenavRow" ng-repeat="item in group">
+                <img ng-src="{{item.src}}"></img>
+                <span>{{item.text}}</span>
+              </md-button>
+              <md-divider></md-divider>
+            </div>
           </div>
-          <div ng-repeat="group in rows">
-            <md-button class="sidenavRow" ng-repeat="item in group">
-              <img ng-src="{{item.src}}"></img>
-              <span>{{item.text}}</span>
-            </md-button>
-            <md-divider></md-divider>
-          </div>
-        </div>
-      </md-sidenav>  
+        </md-sidenav> 
+      </div> 
 
-      <div flex>
+      <div flex ng-class="shouldBeLockedOpen ? 'leftPadding' : 'noLeftPadding'" class="rightOfSidenav">
         <div id="viewContainer" class="md-padding container">
           <div ng-view=""></div>
         </div>

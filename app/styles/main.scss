@@ -3,6 +3,11 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -11,7 +16,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 }
 
 body {
-  padding: 0;
+  padding : 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -22,7 +27,7 @@ body {
 }
 
 /* Custom page header */
-$navbarHeight   : 64px;
+$navbarHeight   : 63px;
 $bgDefault      : #ffffff;
 $bgHighlight    : #e75f5b;
 $colDefault     : #000000;
@@ -32,6 +37,7 @@ $dropDown       : false;
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 0px;
+  z-index: 9999;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -45,7 +51,12 @@ $dropDown       : false;
     max-height: $navbarHeight - 16px;
     margin: 8px 10px;
   }
+  
+  .fixed {
+    position: fixed;
+  }  
 }
+
 
 /* Customize navbar */
 
@@ -129,6 +140,10 @@ $dropDown       : false;
         background-color: $bgHighlight; }}}
 }
 
+.underNavbar{
+  padding-top: $navbarHeight;
+}
+
 /* Article Screen */
 .article {
   margin: 0px;
@@ -199,6 +214,15 @@ $dropDown       : false;
 
 
 /* Sidenav */
+.sidenavFixed {
+  @include calc(height, "100vh - #{$navbarHeight}");
+  position: fixed;
+}
+
+.md-sidenav-left {
+  height: 100%;
+}
+
 .sidenavRow {
   padding: 10px 25px;
   width: 100%;
@@ -214,6 +238,20 @@ $dropDown       : false;
 .sidenavUser {
   background-color: #e75f5b;
   min-height: 150px;
+}
+
+$swift-ease-in-duration: 0.3s !default;
+$swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2) !default;
+$swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !default;
+
+.leftPadding {
+  padding-left: 304px;
+  transition: padding-left $swift-ease-in-duration $swift-ease-in-timing-function;
+}
+
+.noLeftPadding {
+  padding-left: 0px;
+  transition: padding-left $swift-ease-in-duration $swift-ease-in-timing-function;  
 }
 
 /* Custom page footer */
