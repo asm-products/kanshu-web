@@ -1,8 +1,9 @@
 <div class="articlesFeed" ng-controller="ArticlesFeedCtrl">
   <h1>Articles</h1>
-  <div ng-repeat="item in feed.articles">
-    <h2>{{item.substring(0,40)}}</h2>
-    <p>{{item}}.. <a href="/#/article">Read more</a></p>
-    <md-divider></md-divider>
-  </div>
+  <md-card ng-repeat="item in feed.articles">
+    <md-card-content>
+	    <h2>{{item.substring(0,40)}}</h2>
+	    <p>{{item}}.. <a href="/#/article">Read more</a></p>
+    </md-card-content>
+  </md-card>
 </div>
