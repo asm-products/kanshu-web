@@ -2,8 +2,8 @@
   <h1>Article</h1>
   <dictionary-popover></dictionary-popover>
   <button id="inline-def-button" type="button" class="btn btn-default" ng-click="toggle()">Toggle inline definitions</button>
-  <div ng-repeat="sentence in sample">
-  	<div dir-phrase class="phrase" p="phrase" showing-inline-definitions="showingInlineDefinitions" dictionary-popover="dictionaryPopover" ng-repeat="phrase in sentence track by $index">
+
+  	<div dir-phrase class="phrase" p="phrase" showing-inline-definitions="showingInlineDefinitions" dictionary-popover="dictionaryPopover" ng-repeat="phrase in sample.article track by $index">
   	</div>
-  </div>
+
 </div>
