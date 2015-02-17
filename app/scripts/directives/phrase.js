@@ -19,7 +19,6 @@ angular.module('kanshuWebApp')
       link: function postLink(scope, element, attrs) {
         element.on('mouseenter', function () {
         	var rect = element[0].getBoundingClientRect()
-        	console.log(rect);
 
         	if(scope.phrase.type == 'punctuation'){
         		scope.dictionaryPopover.entry = '';

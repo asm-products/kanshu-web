@@ -1,6 +1,4 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
 @mixin calc($property, $expression) { 
@@ -55,89 +53,11 @@ $dropDown       : false;
   .fixed {
     position: fixed;
   }  
-}
 
-
-/* Customize navbar */
-
-.navbar-default {
-  background-color: $bgDefault;
-  border: none;
-  border-radius: 0px;
-  margin: 0px;
-  padding: 0px;
-  min-height: inherit;
-  .navbar-brand {
-    color: $colDefault;
-    &:hover, &:focus { 
-      color: $colHighlight; 
-      }
-    min-height: inherit;
+  .navbar-right{
+    display: inline-block;
+    float: right;
   }
-  .navbar-text {
-    color: $colDefault; 
-    min-height: inherit;
-  }
-  .navbar-nav {
-    min-height: inherit;
-
-    > li {
-      > a {
-        line-height: $navbarHeight - 30px;
-        color: $colDefault;
-        &:hover,  &:focus {
-          color: $colHighlight; }}
-      @if $dropDown {
-        > .dropdown-menu {
-          background-color: $bgDefault;
-          > li > a {
-            color: $colDefault;
-            &:hover,  &:focus {
-              color: $colHighlight;
-              background-color: $bgHighlight; }}
-          .divider {
-            background-color: $bgHighlight;}}}
-    }
-    > .active {
-      > a, > a:hover, > a:focus {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}
-    > .open {
-      > a, > a:hover, > a:focus {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
-  .navbar-toggle {
-    border-color: $colDefault;
-    &:hover, &:focus {
-      background-color: $bgHighlight; }
-    .icon-bar {
-      background-color: $colDefault; }}
-  .navbar-collapse,
-  .navbar-form {
-    border-color: $colDefault; }
-  .navbar-link {
-    color: $colDefault;
-    &:hover {
-      color: $colHighlight; }
-  }
-  .navbar-header {
-    min-height: inherit;
-  }
-  .navbar-right {
-    margin: 0px;
-  }
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu {
-    > li > a {
-      color: $colDefault;
-      &:hover, &:focus {
-        color: $colHighlight; }}
-    > .active {
-      > a, > a:hover, > a:focus, {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
 }
 
 .underNavbar{
@@ -289,7 +209,8 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 60%;
+    margin: auto;
   }
 
   /* Remove the padding we set earlier */

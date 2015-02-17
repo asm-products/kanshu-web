@@ -35,4 +35,18 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .config(function ($mdThemingProvider) {
+    var kanshuRedMap = $mdThemingProvider.extendPalette('red', {
+    '50' : 'ffffff',
+    '500': 'e75f5b'
+    });
+    // Register the new color palette map with the name <code>neonRed</code>
+    $mdThemingProvider.definePalette('kanshuRed', kanshuRedMap);  
+    $mdThemingProvider.theme('default')
+      .primaryPalette('kanshuRed', {
+        'default': '50',
+        'hue-1': '500'
+      })
+      .accentPalette('red');
   });

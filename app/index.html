@@ -21,23 +21,26 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header" role="navigation">
       <md-toolbar class="fixed">
-        <div class="navbar-default" role="navigation">
-          <div class="pull-left">
-            
-            <div id="menuButton" type="button" ng-click="toggleSidenav()">
-              <img src="images/ic_menu_48px.svg"></img>
-            </div>
-          
-          </div>
-          <div class="navbar-right">
-            
-            <a class="pull-right" href="#/">
+        <div class="md-toolbar-tools">
+          <span id="menuButton">
+              <a ng-click="toggleSidenav()">
+                <img src="images/ic_menu_48px.svg"></img>
+              </a>
+          </span>
+          <span flex></span>
+          <span>
+            <a href="#/">
               <img src="images/logo_with_text.png"></img>
             </a>
-          
-          </div>
+          </span>
+          <span flex></span>
+          <span>
+            <a href="#/">
+              <img src="images/user.png"></img>
+            </a>
+          </span>
         </div>
       </md-toolbar>
     </div>
@@ -89,7 +92,6 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
