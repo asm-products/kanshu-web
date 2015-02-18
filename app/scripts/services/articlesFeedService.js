@@ -8,7 +8,7 @@
  * Service of the kanshuWebApp to get articles from server.
  */
  angular.module('kanshuWebApp.services', [])
- 	.factory('ArticlesFeedService', function ($http) {
+ 	.factory('ArticlesFeedService', ['$http', function ($http) {
 
  		var articlesFeedAPI = {};
 
@@ -20,4 +20,4 @@
  		};
 
  		return articlesFeedAPI;
- 	});
+ 	}]);

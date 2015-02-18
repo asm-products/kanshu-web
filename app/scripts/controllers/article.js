@@ -8,7 +8,7 @@
  * Controller of the kanshuWebApp
  */
 angular.module('kanshuWebApp')
-  .controller('ArticleCtrl', function ($scope) {
+  .controller('ArticleCtrl', ['$scope', function ($scope) {
     $scope.showingInlineDefinitions = true;
 
     $scope.dictionaryPopover = {entry: 'Hi', position: {"top": 0, "left": 0}, visible: false};
@@ -921,4 +921,4 @@ angular.module('kanshuWebApp')
         }
     ]
 };
-  });
+  }]);

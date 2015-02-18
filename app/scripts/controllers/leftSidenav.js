@@ -8,7 +8,7 @@
  * Controller of the kanshuWebApp
  */
 angular.module('kanshuWebApp')
-  .controller('LeftSidenavCtrl', function ($scope) {
+  .controller('LeftSidenavCtrl', ['$scope', function ($scope) {
     $scope.rows = [
     	[{"src": "images/ic_poll_48px.svg",
     	"text": "My Progress"},
@@ -30,4 +30,4 @@ angular.module('kanshuWebApp')
     	"text": "Sign Out"}]
 
     ];
-  });
+  }]);

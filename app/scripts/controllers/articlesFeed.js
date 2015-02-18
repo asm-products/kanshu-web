@@ -8,7 +8,7 @@
  * Controller of the articles feed.
  */
 angular.module('kanshuWebApp')
-	.controller('ArticlesFeedCtrl', function ($scope, ArticlesFeedService) {
+	.controller('ArticlesFeedCtrl', ['$scope', 'ArticlesFeedService', function ($scope, ArticlesFeedService) {
 
 		$scope.feed = ['Initialize the feed'];
 
@@ -22,4 +22,4 @@ angular.module('kanshuWebApp')
 				console.error('Error fetching feed:', data);
 			});
     
-	});
+	}]);
