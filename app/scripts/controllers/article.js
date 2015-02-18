@@ -9,12 +9,6 @@
  */
 angular.module('kanshuWebApp')
   .controller('ArticleCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-
     $scope.showingInlineDefinitions = true;
 
     $scope.dictionaryPopover = {entry: 'Hi', position: {"top": 0, "left": 0}, visible: false};

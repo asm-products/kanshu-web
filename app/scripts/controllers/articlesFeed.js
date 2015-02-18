@@ -12,19 +12,14 @@ angular.module('kanshuWebApp')
 
 		$scope.feed = ['Initialize the feed'];
 
-		ArticlesFeedService.getArticles().success(function (data) {
-			$scope.feed = {
-				articles: data,
-			};
-		})
-		.error(function (data) {
-			console.error('Error fetching feed:', data);
-		});
-
-	    $scope.awesomeThings = [
-	      'HTML5 Boilerplate',
-	      'AngularJS',
-	      'Karma'
-	    ];
+		ArticlesFeedService.getArticles()
+			.success(function (data) {
+				$scope.feed = {
+					articles: data,
+				};
+			})
+			.error(function (data) {
+				console.error('Error fetching feed:', data);
+			});
     
 	});
