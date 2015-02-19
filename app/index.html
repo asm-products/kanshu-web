@@ -59,12 +59,12 @@
                   <span>{{item.text}}</span>
                 </md-button>
                 <div ng-if="item.type === 'toggle'">
-                  <div ng-if="showingTopics">
-                  <md-button class="sidenavTopic" ng-repeat="topic in topics">
-                      <md-checkbox ng-model="topic.checked" aria-label="Checkbox 1">
+                  <div class="sidenavAllTopics" ng-if="showingTopics">
+                    <div class="sidenavTopic" ng-repeat="topic in topics">
+                      <md-checkbox ng-model="topic.checked" ng-change="topicsChanged(topic.topic)">
                         {{topic.topic}}
                       </md-checkbox>
-                  </md-button>
+                    </div>
                   </div>
                 </div>   
               </div>           

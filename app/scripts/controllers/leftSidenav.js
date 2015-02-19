@@ -17,16 +17,51 @@ angular.module('kanshuWebApp')
             $scope.showingTopics = !$scope.showingTopics;
         }}],
     	[{"src": "images/ic_extension_black_48dp.png",
-    	"text": "Add Ons"}],
-    	[{"src": "images/ic_settings_black_48dp.png",
+    	"text": "Add Ons"},
+    	{"src": "images/ic_settings_black_48dp.png",
     	"text": "Upgrade"}],
     	[{"src": "images/ic_help_black_48dp.png",
-    	"text": "Help"}],
-    	[{"src": "images/kanshu_about_gray.png",
+    	"text": "Help"},
+    	{"src": "images/kanshu_about_gray.png",
     	"text": "About"}],
     ];
 
     $scope.showingTopics = false;
+
+    $scope.checkAllTopics = function(){
+        for (var i = 0; i < $scope.topics.length - 1; i++){
+            $scope.topics[i].checked = true;
+        }
+    }
+
+    $scope.uncheckAllTopics = function(){
+        for (var i = 0; i < $scope.topics.length - 1; i++){
+            $scope.topics[i].checked = false;
+        }
+    }    
+
+    $scope.topicsChanged = function(topic){
+        if(topic === "All"){
+            if($scope.topics[$scope.topics.length - 1].checked === true){
+                $scope.checkAllTopics();
+            }else{
+                $scope.uncheckAllTopics();
+            }
+        }else{
+            var allTrue = true;
+            for(var i = 0; i < $scope.topics.length - 1; i++){
+                allTrue = allTrue && $scope.topics[i].checked; 
+                if(allTrue === false){
+                    break;
+                }
+            }
+            if(allTrue){
+                $scope.topics[$scope.topics.length - 1].checked = true;
+            }else{
+                $scope.topics[$scope.topics.length - 1].checked = false;
+            }
+        }
+    }
 
     $scope.topics = [
         {"topic": "China", 
@@ -59,6 +94,8 @@ angular.module('kanshuWebApp')
         "checked": true},
         {"topic": "Auto",
         "checked": true},
+        {"topic": "All",
+        "checked": true}
     ];
 
   }]);

@@ -152,15 +152,25 @@ $dropDown       : false;
   img {
     max-width: 30px;
     margin-right: 20px;
+    vertical-align: middle;
   }
+
+  span {
+    vertical-align: middle; 
+  }
+}
+
+.sidenavAllTopics {
+  padding: 10px;
+  background-color: #f5f5f5;
 }
 
 .sidenavTopic {
   width: 100%;
-  font-size: 75%;
-  padding: 5px;
-  padding-left: 25%;
-  padding-right: 25%;
+  font-size: 80%;
+  padding: 1px;
+  padding-left: 20%;
+  padding-right: 20%;
   text-align: left;
 
   md-checkbox {
