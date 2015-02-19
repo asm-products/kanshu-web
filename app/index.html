@@ -60,7 +60,7 @@
                 </md-button>
                 <div ng-if="item.type === 'toggle'">
                   <div class="sidenavAllTopics" ng-if="showingTopics">
-                    <div class="sidenavTopic" ng-repeat="topic in topics">
+                    <div class="sidenavTopic" ng-repeat="topic in getTopics()">
                       <md-checkbox ng-model="topic.checked" ng-change="topicsChanged(topic.topic)">
                         {{topic.topic}}
                       </md-checkbox>
@@ -123,6 +123,7 @@
         <script src="scripts/directives/dictionarypopover.js"></script>
         <script src="scripts/controllers/leftSidenav.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/services/topics.js"></script>
         <!-- endbuild -->
 </body>
 </html>
