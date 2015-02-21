@@ -91,6 +91,39 @@ $dropDown       : false;
   }
 }
 
+/* Articles Feed */
+$whiteframe-shadow-z1: 0px 2px 5px 0 rgba(0,0,0,0.26) !default;
+$whiteframe-zindex-z1: 1 !default;
+$whiteframe-shadow-z2: 0px 8px 17px rgba(0,0,0,0.2) !default;
+$whiteframe-zindex-z2: 2 !default;
+$whiteframe-shadow-z3: 0px 17px 50px rgba(0,0,0,0.19) !default;
+$whiteframe-zindex-z3: 3 !default;
+$whiteframe-shadow-z4: 0px 16px 28px 0 rgba(0,0,0,0.22) !default;
+$whiteframe-zindex-z4: 4 !default;
+$whiteframe-shadow-z5: 0px 27px 24px 0 rgba(0,0,0,0.2) !default;
+$whiteframe-zindex-z5: 5 !default;
+
+.articlesFeed { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+}
+
+.articleCard {
+  width: 350px; 
+  height: 600px;
+  overflow: hidden;
+}
+
+.articleCard:hover{
+  box-shadow: $whiteframe-shadow-z2;
+}
+
+.articleCardContent{
+  height: 380px;
+  overflow: hidden;
+}
+
 /* Dictionary Popover */
 #dictionaryPopover {
   position: absolute;
@@ -233,7 +266,7 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 60%;
+    max-width: 80%;
     margin: auto;
   }
 
