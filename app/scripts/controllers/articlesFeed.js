@@ -10,16 +10,6 @@
 angular.module('kanshuWebApp')
 	.controller('ArticlesFeedCtrl', ['$scope', 'ArticlesFeedService', function ($scope, ArticlesFeedService) {
 
-		$scope.feed = ['Initialize the feed'];
-
-		ArticlesFeedService.getArticles()
-			.success(function (data) {
-				$scope.feed = {
-					articles: data,
-				};
-			})
-			.error(function (data) {
-				console.error('Error fetching feed:', data);
-			});
+		$scope.feed = new ArticlesFeedService();
     
 	}]);

@@ -10,13 +10,26 @@
  angular.module('kanshuWebApp.services', [])
  	.factory('ArticlesFeedService', ['$http', function ($http) {
 
- 		var articlesFeedAPI = {};
+ 		var articlesFeedAPI = function(){
+ 			this.articles = [];
+ 			this.busy = false;
+ 		};
 
- 		articlesFeedAPI.getArticles = function() {
- 			return $http({
+ 		articlesFeedAPI.prototype.getArticles = function() {
+ 			if(this.busy){
+ 				return;
+ 			}
+ 			this.busy = true;
+
+ 			$http({
  				method: 'GET',
  				url: 'http://baconipsum.com/api/?type=meat-and-filler'
- 			});
+ 			}).success(function(data){
+ 				for(var i = 0; i < data.length; i++){
+ 					this.articles.push(data[i]);
+ 				}
+ 				this.busy = false;
+ 			}.bind(this));
  		};
 
  		return articlesFeedAPI;

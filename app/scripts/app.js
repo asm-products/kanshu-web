@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'kanshuWebApp.services',
-    'ngMaterial'
+    'ngMaterial',
+    'infinite-scroll'
   ])
   .config(function ($routeProvider) {
     $routeProvider
