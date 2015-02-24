@@ -1,10 +1,6 @@
-// bower:scss
-// endbower
-
-@mixin calc($property, $expression) { 
-  #{$property}: -webkit-calc(#{$expression}); 
-  #{$property}: calc(#{$expression}); 
-} 
+@import "partials/variables";
+@import "partials/articlesfeed";
+@import "partials/article";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -17,8 +13,6 @@ body {
   padding : 0;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
@@ -62,107 +56,6 @@ $dropDown       : false;
 
 .underNavbar{
   padding-top: $navbarHeight;
-}
-
-/* Article Screen */
-.article {
-  margin: 0px;
-  padding: 0px;
-  
-  p, div, span {
-    margin: 0px;
-    padding: 0px;
-  }
-
-  .phrase {  
-    display: inline-block;
-    font-family: Helvetica, Arial, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif; 
-    text-align: center;
-    padding: 2px 4px 2px 0px;     
-    
-    .hanzi {
-      margin-top: -3px;
-      font-size: 180%;
-    }
-    
-    .pinyin {
-      display: inline-block;  
-    }
-  }
-}
-
-/* Articles Feed */
-$whiteframe-shadow-z1: 0px 2px 5px 0 rgba(0,0,0,0.26) !default;
-$whiteframe-zindex-z1: 1 !default;
-$whiteframe-shadow-z2: 0px 8px 17px rgba(0,0,0,0.2) !default;
-$whiteframe-zindex-z2: 2 !default;
-$whiteframe-shadow-z3: 0px 17px 50px rgba(0,0,0,0.19) !default;
-$whiteframe-zindex-z3: 3 !default;
-$whiteframe-shadow-z4: 0px 16px 28px 0 rgba(0,0,0,0.22) !default;
-$whiteframe-zindex-z4: 4 !default;
-$whiteframe-shadow-z5: 0px 27px 24px 0 rgba(0,0,0,0.2) !default;
-$whiteframe-zindex-z5: 5 !default;
-
-.articlesFeed { 
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center;
-}
-
-.articleCard {
-  width: 350px; 
-  height: 600px;
-  overflow: hidden;
-}
-
-.articleCard:hover{
-  box-shadow: $whiteframe-shadow-z2;
-}
-
-.articleCardContent{
-  height: 380px;
-  overflow: hidden;
-}
-
-/* Dictionary Popover */
-#dictionaryPopover {
-  position: absolute;
-  max-width: 200px;
-  background-color: #d4554b;
-  color: white;
-  padding: 10px;  
-  border-radius: 5px;
-  display: none;
-}
-
-#popoverTriangle1 {
-  content: "";
-  position: absolute;
-  bottom: -12px; /* value = - border-top-width - border-bottom-width */
-  left: 0px;
-  border: 0;
-  border-right-width: 20px; /* vary this value to change the angle of the vertex */
-  border-bottom-width: 12px; /* triangle height */
-  height: 0px; 
-  border-style: solid;
-  border-color: transparent #d4554b;
-  width: 0;
-  display: none;
-}
-
-#popoverTriangle2 {
-  content: "";
-  position: absolute;
-  bottom: -12px; /* value = - border-top-width - border-bottom-width */
-  left: 0px;
-  border: 0;
-  border-bottom-width: 12px; /* triangle height */
-  border-right-width: 5px; /* vary this value to change the angle of the vertex */
-  height: 0px; 
-  border-style: solid;
-  border-color: transparent #ffffff;
-  width: 0;
-  display: none;
 }
 
 
@@ -243,26 +136,6 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -272,14 +145,8 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
 
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }
