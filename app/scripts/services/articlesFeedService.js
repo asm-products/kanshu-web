@@ -24,9 +24,13 @@
  			$http({
  				method: 'GET',
  				url: 'http://baconipsum.com/api/?type=meat-and-filler'
- 			}).success(function(data){
- 				for(var i = 0; i < data.length; i++){
- 					this.articles.push(data[i]);
+ 			}).success(function(articles){
+ 				for(var i = 0; i < articles.length; i++){
+ 					var article = {};
+ 					article.content = articles[i];
+ 					article.hearts = Math.floor((Math.random() * 10) + 1);
+ 					article.comments = Math.floor((Math.random() * 10) + 1);
+ 					this.articles.push(article);
  				}
  				this.busy = false;
  			}.bind(this));

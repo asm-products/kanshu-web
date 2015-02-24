@@ -1,4 +1,7 @@
 /* Articles Feed */
+$card-margin: 8px !default;
+$card-padding: 16px !default;
+
 .articlesFeed { 
   display: flex; 
   flex-wrap: wrap; 
@@ -8,18 +11,45 @@
 .articleCard {
   position: relative;
   width: 350px; 
-  height: 600px;
+  height: 500px;
   overflow: hidden;
 }
 
 .articleCardFade{
   position: absolute;
   width: 100%;
-  height: 200px;
+  height: 100px;
   bottom: 0;
   left: 0;
   background:-webkit-linear-gradient(top,rgba(255,255,0,0) 0px,#fff 50%,#fff 100%) repeat-x scroll 0 0 transparent; 
   background:linear-gradient(to bottom,rgba(255,255,0,0) 0px,#fff 50%,#fff 100%) repeat-x scroll 0 0 transparent;
+
+  .articleCardFooter{
+  	position: absolute;
+  	width: 100%;
+  	bottom: 0;
+  	padding-bottom: 15px;
+  	padding-left: $card-padding;
+  	padding-right: $card-padding;
+
+  	.fa-heart{
+  		color: $bgHighlight;
+  	}
+
+  	.hearts{
+  		padding-right:10px;
+  	}
+
+  	.right{
+  		position:absolute;
+  		right: $card-padding;
+
+  		.magazine{
+  			color: $bgHighlight;
+  			font-weight: bold;
+  		}
+  	}
+  }
 }
 
 .articleCard:hover{
