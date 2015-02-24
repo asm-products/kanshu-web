@@ -28,8 +28,8 @@
  				for(var i = 0; i < articles.length; i++){
  					var article = {};
  					article.content = articles[i];
- 					article.hearts = Math.floor((Math.random() * 10) + 1);
- 					article.comments = Math.floor((Math.random() * 10) + 1);
+ 					article.hearts = Math.floor(Math.random() * 10);
+ 					article.comments = Math.floor(Math.random() * 10);
  					this.articles.push(article);
  				}
  				this.busy = false;

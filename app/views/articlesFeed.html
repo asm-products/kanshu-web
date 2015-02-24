@@ -7,12 +7,12 @@
 		</md-card-content>
 			<div class="articleCardFade">
 				<div class="articleCardFooter">
-					<i class="fa fa-heart"></i>
+					<i ng-class="item.hearts > 0 ? 'fa fa-heart' : 'fa fa-heart-o'"></i>
 					<span class="hearts">{{item.hearts}}</span>
 					<span>{{item.comments}}</span>
 					<span>comments</span>
 					<span class="right">
-						<span class="magazine">China Daily</span>
+						<span class="feed">China Daily</span>
 						<span class="time">4:30pm</span>
 					</span>
 				</div>
