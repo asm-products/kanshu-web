@@ -13,6 +13,10 @@ $card-padding: 16px !default;
   width: 350px; 
   height: 500px;
   overflow: hidden;
+  background-color: #ffffff;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .articleCardFade{
@@ -37,12 +41,15 @@ $card-padding: 16px !default;
   	}
 
   	.hearts{
-  		padding-right:10px;
+  		padding-right: 8px;
   	}
 
   	.right{
   		position:absolute;
+  		width: 45%;
+  		text-align: right;
   		right: $card-padding;
+  		bottom: 15px;
 
   		.feed{
   			color: $bgHighlight;

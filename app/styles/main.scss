@@ -55,7 +55,12 @@ body {
 /* Sidenav */
 .sidenavFixed {
   @include calc(height, "100vh - #{$navbarHeight}");
-  position: fixed;
+  position: fixed;  
+}
+
+.rightOfSidenav {
+  background-color: #f1f1f1;
+  height: 100%;
 }
 
 .md-sidenav-left {
@@ -132,7 +137,7 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
   }
 
