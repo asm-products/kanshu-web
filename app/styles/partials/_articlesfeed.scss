@@ -20,27 +20,22 @@ $cardBaseWidth: 350px;
   margin-right: 20px;
 }
 
-.articleCardItemSelected {
-  height: 600px;
-}
-
 .articleCardFade{
   position: absolute;
   width: 100%;
-  height: 120px;
+  height: 60px;
   bottom: 0;
   left: 0;
   background:-webkit-linear-gradient(top,rgba(255,255,0,0) 0px,#fff 50%,#fff 100%) repeat-x scroll 0 0 transparent; 
-  background:linear-gradient(to bottom,rgba(255,255,0,0) 0px,#fff 50%,#fff 100%) repeat-x scroll 0 0 transparent;
+  background:linear-gradient(to bottom,rgba(255,255,0,0) 0px,#fff 80%,#fff 100%) repeat-x scroll 0 0 transparent;
 
 }
 
 .articleComments {
-  position: absolute; 
+  position: relative; 
   order: 2;
   z-index: 2; 
   width: 100%;
-  bottom: calc(15px + 2em);
 }
 
 .articleCardFooter{
@@ -48,9 +43,7 @@ $cardBaseWidth: 350px;
   order: 3;
   width: 100%;
   bottom: 0;
-  padding-bottom: 15px;
-  padding-left: $card-padding;
-  padding-right: $card-padding;
+  padding: 15px $card-padding;
 
   .fa-heart{
     color: $bgHighlight;
@@ -79,8 +72,13 @@ $cardBaseWidth: 350px;
 }
 
 .articleCardContent{
-  height: 300px;
+  position: relative;
+  height: 280px;
   overflow: hidden;
+}
+
+.articleCardContentItemSelected {
+  height: 160px;
 }
 
 .curtainUp {
@@ -100,7 +98,8 @@ $cardBaseWidth: 350px;
 }
 
 .selectedArticle {
-  position: fixed; 
+  position: absolute; 
+  height: auto;  
   width: 35%;
   min-width: $cardBaseWidth;
   z-index: 800;
@@ -110,4 +109,23 @@ $cardBaseWidth: 350px;
   margin-right: auto;
   top: $navbarHeight;
   box-shadow: $whiteframe-shadow-z3;
+}
+
+article-comment {
+  display: block;
+  padding: 10px $card-padding;
+
+  .userComment {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    float:left; 
+    background-color: #cccccc;
+    margin-right:20px;
+  }
+}
+
+.articleCommentClear {
+  clear: both;
+  height: 10px;
 }
