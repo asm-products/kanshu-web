@@ -1,6 +1,7 @@
 /* Articles Feed */
 $card-margin: 8px !default;
 $card-padding: 16px !default;
+$cardBaseWidth: 350px;
 
 .articlesFeed { 
   display: flex; 
@@ -10,7 +11,7 @@ $card-padding: 16px !default;
 
 .articleCard {
   position: relative;
-  width: 350px; 
+  width: $cardBaseWidth;
   height: 500px;
   overflow: hidden;
   background-color: #ffffff;
@@ -19,43 +20,57 @@ $card-padding: 16px !default;
   margin-right: 20px;
 }
 
+.articleCardItemSelected {
+  height: 600px;
+}
+
 .articleCardFade{
   position: absolute;
   width: 100%;
-  height: 100px;
+  height: 120px;
   bottom: 0;
   left: 0;
   background:-webkit-linear-gradient(top,rgba(255,255,0,0) 0px,#fff 50%,#fff 100%) repeat-x scroll 0 0 transparent; 
   background:linear-gradient(to bottom,rgba(255,255,0,0) 0px,#fff 50%,#fff 100%) repeat-x scroll 0 0 transparent;
 
-  .articleCardFooter{
-  	position: absolute;
-  	width: 100%;
-  	bottom: 0;
-  	padding-bottom: 15px;
-  	padding-left: $card-padding;
-  	padding-right: $card-padding;
+}
 
-  	.fa-heart{
-  		color: $bgHighlight;
-  	}
+.articleComments {
+  position: absolute; 
+  order: 2;
+  z-index: 2; 
+  width: 100%;
+  bottom: calc(15px + 2em);
+}
 
-  	.hearts{
-  		padding-right: 8px;
-  	}
+.articleCardFooter{
+  z-index: 2;
+  order: 3;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 15px;
+  padding-left: $card-padding;
+  padding-right: $card-padding;
 
-  	.right{
-  		position:absolute;
-  		width: 45%;
-  		text-align: right;
-  		right: $card-padding;
-  		bottom: 15px;
+  .fa-heart{
+    color: $bgHighlight;
+  }
 
-  		.feed{
-  			color: $bgHighlight;
-  			font-weight: bold;
-  		}
-  	}
+  .hearts{
+    padding-right: 8px;
+  }
+
+  .right{
+    position: absolute;
+    width: 45%;
+    text-align: right;
+    right: $card-padding;
+    bottom: 15px;
+
+    .feed{
+      color: $bgHighlight;
+      font-weight: bold;
+    }
   }
 }
 
@@ -64,6 +79,35 @@ $card-padding: 16px !default;
 }
 
 .articleCardContent{
-  height: 380px;
+  height: 300px;
   overflow: hidden;
+}
+
+.curtainUp {
+  position: fixed;
+  left: 0;
+  top: $navbarHeight;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  z-index: 400;
+}
+
+.curtainDown {
+  background-color: none;
+  pointer-events: none;
+}
+
+.selectedArticle {
+  position: fixed; 
+  width: 35%;
+  min-width: $cardBaseWidth;
+  z-index: 800;
+  left: 0;
+  right: 0; 
+  margin-left: auto;
+  margin-right: auto;
+  top: $navbarHeight;
+  box-shadow: $whiteframe-shadow-z3;
 }

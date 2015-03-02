@@ -11,5 +11,17 @@ angular.module('kanshuWebApp')
 	.controller('ArticlesFeedCtrl', ['$scope', 'ArticlesFeedService', function ($scope, ArticlesFeedService) {
 
 		$scope.feed = new ArticlesFeedService();
-    
+
+		$scope.openComments = function(item){
+			item.isSelected = true;
+			$scope.itemSelected = item;
+			$scope.itemIsSelected = true;
+		}
+    	
+    	$scope.closeComments = function(){
+    		$scope.itemSelected.isSelected = false;
+    		$scope.itemSelected = null;
+    		$scope.itemIsSelected = false;
+    	}
+
 	}]);

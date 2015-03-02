@@ -30,6 +30,7 @@
  					article.content = articles[i];
  					article.hearts = Math.floor(Math.random() * 10);
  					article.comments = Math.floor(Math.random() * 10);
+ 					article.isSelected = false;
  					this.articles.push(article);
  				}
  				this.busy = false;
