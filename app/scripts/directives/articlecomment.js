@@ -9,12 +9,14 @@
 angular.module('kanshuWebApp')
   .directive('articleComment', function () {
     return {
-      template: '<div><img src="images/user.png" class="userComment"></img><div style="float:none">{{comment}}</div></div>',
+      template: '<div class="commentUser"><img src="images/user.png" class="commentUserImage"></img></div>' +
+                  '<div class="commentContent">' + 
+                    '<span>{{comment.username}}</span> <span class="right">{{comment.timestamp}}</span>' + 
+                    '<p>{{comment.comment}}</p>' +
+                  '</div>',
       scope: {
       	comment: '='
       },
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-      }
+      restrict: 'E'
     };
   });

@@ -1,27 +1,19 @@
 <div infinite-scroll="feed.getArticles()" infinite-scroll-distance="2" class="articlesFeed">
-	<md-card class="articleCard" ng-class="item.isSelected ? 'selectedArticle' : ''" ng-repeat="item in feed.articles">
-		<img src="http://lorempixel.com/400/200"></img>
+	<md-card class="articleCard" ng-repeat="item in feed.articles">
+		<div class="imageWrapper">
+			<img src="http://lorempixel.com/400/400"></img>
+		</div>
 		<md-card-content>
-			<div class="articleCardContent" ng-class="item.isSelected ? 'articleCardContentItemSelected': ''">
+			<div class="articleCardContent">
 				<h2>{{item.content.substring(0,40)}}</h2>
 				<p>{{item.content}}.. <a href="/#/article">Read more</a></p>
 				<div class="articleCardFade"></div>
 			</div>
 		</md-card-content>
-		<div ng-if="item.isSelected" class="articleComments">
-			<md-divider></md-divider>
-			<div ng-repeat="comment in item.comments">
-				<article-comment comment="comment"></article-comment>
-				<div class="articleCommentClear"></div>
-				<md-divider></md-divider>
-			</div>
-			<md-divider ng-if="items.comments.length == 0"></md-divider>
-
-		</div>
 		<div class="articleCardFooter">
 			<i ng-class="item.hearts > 0 ? 'fa fa-heart' : 'fa fa-heart-o'"></i>
 			<span class="hearts">{{item.hearts}}</span>
-	        <a ng-if="!item.isSelected" href="" ng-click="openComments(item)"><span class="comments">{{item.comments.length}} comments</span></a>
+	        <a href="" ng-click="showSelectedArticle($event, item)"><span class="comments">{{item.comments.length}} comments</span></a>
 			<span class="right">
 				<span class="feed">China Daily</span>
 				<span class="time">4:30pm</span>
@@ -29,4 +21,3 @@
 		</div>			
 	</md-card>
 </div>
-<div ng-class="itemIsSelected ? 'curtainUp': 'curtainDown'" ng-click="closeComments()"></div>
