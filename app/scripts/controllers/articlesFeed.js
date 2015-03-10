@@ -8,23 +8,21 @@
  * Controller of the articles feed.
  */
 angular.module('kanshuWebApp')
-	.controller('ArticlesFeedCtrl', function ($scope, ArticlesFeedService) {
+	.controller('ArticlesFeedCtrl', ['$scope', '$mdDialog', 'ArticlesFeedService', function ($scope, $mdDialog, ArticlesFeedService) {
 
-		$scope.feed = ['Initialize the feed'];
+		$scope.feed = new ArticlesFeedService();
 
-		ArticlesFeedService.getArticles().success(function (data) {
-			$scope.feed = {
-				articles: data,
-			};
-		})
-		.error(function (data) {
-			console.error('Error fetching feed:', data);
-		});
+    	$scope.showSelectedArticle = function(ev, item1) {
+	    	$mdDialog.show({
+	      		controller: DialogController,
+	      		templateUrl: 'views/articleDetail.html',
+	      		targetEvent: ev,
+	      		locals: {item : item1}
+	    	});
+	  	};
 
-	    $scope.awesomeThings = [
-	      'HTML5 Boilerplate',
-	      'AngularJS',
-	      'Karma'
-	    ];
-    
-	});
+	  	function DialogController($scope, item) {
+	  		$scope.item = item;
+		}
+
+	}]);

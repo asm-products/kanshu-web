@@ -13,7 +13,6 @@ angular.module('kanshuWebApp')
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
       	scope.$watch("dictionaryPopover.position", function(newValue){
-      		console.log(element);
       		$("#dictionaryPopover").css('left', scope.dictionaryPopover.position.left);
      		$("#dictionaryPopover").css('top', scope.dictionaryPopover.position.top);    
       		$("#popoverTriangle1").css('left', scope.dictionaryPopover.position.triangleLeft1);
@@ -23,7 +22,6 @@ angular.module('kanshuWebApp')
       	});
 
       	scope.$watch("dictionaryPopover.visible", function(newValue){
-      		console.log('visible ' + newValue);
       		if(newValue){
       			$("#dictionaryPopover").css('display', 'block');
       			$("#popoverTriangle1").css('display', 'block');

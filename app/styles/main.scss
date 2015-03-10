@@ -1,12 +1,6 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-// bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-// endbower
-
-@mixin calc($property, $expression) { 
-  #{$property}: -webkit-calc(#{$expression}); 
-  #{$property}: calc(#{$expression}); 
-} 
+@import "partials/variables";
+@import "partials/articlesfeed";
+@import "partials/article";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -19,21 +13,12 @@ body {
   padding : 0;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
 }
 
 /* Custom page header */
-$navbarHeight   : 63px;
-$bgDefault      : #ffffff;
-$bgHighlight    : #e75f5b;
-$colDefault     : #000000;
-$colHighlight   : #ffffff;
-$dropDown       : false;
-
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 0px;
@@ -55,168 +40,27 @@ $dropDown       : false;
   .fixed {
     position: fixed;
   }  
-}
 
-
-/* Customize navbar */
-
-.navbar-default {
-  background-color: $bgDefault;
-  border: none;
-  border-radius: 0px;
-  margin: 0px;
-  padding: 0px;
-  min-height: inherit;
-  .navbar-brand {
-    color: $colDefault;
-    &:hover, &:focus { 
-      color: $colHighlight; 
-      }
-    min-height: inherit;
+  .navbar-right{
+    display: inline-block;
+    float: right;
   }
-  .navbar-text {
-    color: $colDefault; 
-    min-height: inherit;
-  }
-  .navbar-nav {
-    min-height: inherit;
-
-    > li {
-      > a {
-        line-height: $navbarHeight - 30px;
-        color: $colDefault;
-        &:hover,  &:focus {
-          color: $colHighlight; }}
-      @if $dropDown {
-        > .dropdown-menu {
-          background-color: $bgDefault;
-          > li > a {
-            color: $colDefault;
-            &:hover,  &:focus {
-              color: $colHighlight;
-              background-color: $bgHighlight; }}
-          .divider {
-            background-color: $bgHighlight;}}}
-    }
-    > .active {
-      > a, > a:hover, > a:focus {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}
-    > .open {
-      > a, > a:hover, > a:focus {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
-  .navbar-toggle {
-    border-color: $colDefault;
-    &:hover, &:focus {
-      background-color: $bgHighlight; }
-    .icon-bar {
-      background-color: $colDefault; }}
-  .navbar-collapse,
-  .navbar-form {
-    border-color: $colDefault; }
-  .navbar-link {
-    color: $colDefault;
-    &:hover {
-      color: $colHighlight; }
-  }
-  .navbar-header {
-    min-height: inherit;
-  }
-  .navbar-right {
-    margin: 0px;
-  }
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu {
-    > li > a {
-      color: $colDefault;
-      &:hover, &:focus {
-        color: $colHighlight; }}
-    > .active {
-      > a, > a:hover, > a:focus, {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
 }
 
 .underNavbar{
   padding-top: $navbarHeight;
 }
 
-/* Article Screen */
-.article {
-  margin: 0px;
-  padding: 0px;
-  
-  p, div, span {
-    margin: 0px;
-    padding: 0px;
-  }
-
-  .phrase {  
-    display: inline-block;
-    font-family: Helvetica, Arial, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif; 
-    text-align: center;
-    padding: 2px 4px 2px 0px;     
-    
-    .hanzi {
-      margin-top: -3px;
-      font-size: 180%;
-    }
-    
-    .punc {
-      display: inline-block;  
-    }
-  }
-}
-
-/* Dictionary Popover */
-#dictionaryPopover {
-  position: absolute;
-  max-width: 200px;
-  background-color: #d4554b;
-  color: white;
-  padding: 10px;  
-  border-radius: 5px;
-  display: none;
-}
-
-#popoverTriangle1 {
-  content: "";
-  position: absolute;
-  bottom: -12px; /* value = - border-top-width - border-bottom-width */
-  left: 0px;
-  border: 0;
-  border-right-width: 20px; /* vary this value to change the angle of the vertex */
-  border-bottom-width: 12px; /* triangle height */
-  height: 0px; 
-  border-style: solid;
-  border-color: transparent #d4554b;
-  width: 0;
-  display: none;
-}
-
-#popoverTriangle2 {
-  content: "";
-  position: absolute;
-  bottom: -12px; /* value = - border-top-width - border-bottom-width */
-  left: 0px;
-  border: 0;
-  border-bottom-width: 12px; /* triangle height */
-  border-right-width: 5px; /* vary this value to change the angle of the vertex */
-  height: 0px; 
-  border-style: solid;
-  border-color: transparent #ffffff;
-  width: 0;
-  display: none;
-}
-
 
 /* Sidenav */
 .sidenavFixed {
   @include calc(height, "100vh - #{$navbarHeight}");
-  position: fixed;
+  position: fixed;  
+}
+
+.rightOfSidenav {
+  background-color: #ffffff;
+  height: 100%;
 }
 
 .md-sidenav-left {
@@ -232,6 +76,30 @@ $dropDown       : false;
   img {
     max-width: 30px;
     margin-right: 20px;
+    vertical-align: middle;
+  }
+
+  span {
+    vertical-align: middle; 
+  }
+}
+
+.sidenavAllTopics {
+  padding: 10px;
+  background-color: #f5f5f5;
+}
+
+.sidenavTopic {
+  width: 100%;
+  font-size: 80%;
+  padding: 1px;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: left;
+
+  md-checkbox {
+    margin: 0px;
+    text-transform: none;
   }
 }
 
@@ -266,42 +134,17 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 90%;
+    margin: auto;
   }
 
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
   }
 }

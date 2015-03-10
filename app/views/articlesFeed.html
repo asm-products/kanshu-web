@@ -1,8 +1,23 @@
-<div class="articlesFeed" ng-controller="ArticlesFeedCtrl">
-  <h1>Articles</h1>
-  <div ng-repeat="item in feed.articles">
-    <h2>{{item.substring(0,40)}}</h2>
-    <p>{{item}}.. <a href="/#/article">Read more</a></p>
-    <md-divider></md-divider>
-  </div>
+<div infinite-scroll="feed.getArticles()" infinite-scroll-distance="2" class="articlesFeed">
+	<md-card class="articleCard" ng-repeat="item in feed.articles">
+		<div class="imageWrapper">
+			<img src="http://lorempixel.com/400/400"></img>
+		</div>
+		<md-card-content>
+			<div class="articleCardContent">
+				<h2>{{item.content.substring(0,40)}}</h2>
+				<p>{{item.content}}.. <a href="/#/article">Read more</a></p>
+				<div class="articleCardFade"></div>
+			</div>
+		</md-card-content>
+		<div class="articleCardFooter">
+			<i ng-class="item.hearts > 0 ? 'fa fa-heart' : 'fa fa-heart-o'"></i>
+			<span class="hearts">{{item.hearts}}</span>
+	        <a href="" ng-click="showSelectedArticle($event, item)"><span class="comments">{{item.comments.length}} comments</span></a>
+			<span class="right">
+				<span class="feed">China Daily</span>
+				<span class="time">4:30pm</span>
+			</span>
+		</div>			
+	</md-card>
 </div>

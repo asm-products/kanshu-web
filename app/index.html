@@ -9,6 +9,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -21,23 +22,26 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header" role="navigation">
       <md-toolbar class="fixed">
-        <div class="navbar-default" role="navigation">
-          <div class="pull-left">
-            
-            <div id="menuButton" type="button" ng-click="toggleSidenav()">
-              <img src="images/ic_menu_48px.svg"></img>
-            </div>
-          
-          </div>
-          <div class="navbar-right">
-            
-            <a class="pull-right" href="#/">
+        <div class="md-toolbar-tools">
+          <span id="menuButton">
+              <a href="" ng-click="toggleSidenav()">
+                <img src="images/ic_menu_48px.svg"></img>
+              </a>
+          </span>
+          <span flex></span>
+          <span>
+            <a href="#/">
               <img src="images/logo_with_text.png"></img>
             </a>
-          
-          </div>
+          </span>
+          <span flex></span>
+          <span>
+            <a href="#/">
+              <img src="images/user.png"></img>
+            </a>
+          </span>
         </div>
       </md-toolbar>
     </div>
@@ -50,17 +54,28 @@
 
             </div>
             <div ng-repeat="group in rows">
-              <md-button class="sidenavRow" ng-repeat="item in group">
-                <img ng-src="{{item.src}}"></img>
-                <span>{{item.text}}</span>
-              </md-button>
+              <div ng-repeat="item in group">
+                <md-button class="sidenavRow" ng-click="item.onClick()">
+                  <img ng-src="{{item.src}}"></img>
+                  <span>{{item.text}}</span>
+                </md-button>
+                <div ng-if="item.type === 'toggle'">
+                  <div class="sidenavAllTopics" ng-if="showingTopics">
+                    <div class="sidenavTopic" ng-repeat="topic in getTopics()">
+                      <md-checkbox ng-model="topic.checked" ng-change="topicsChanged(topic.topic)">
+                        {{topic.topic}}
+                      </md-checkbox>
+                    </div>
+                  </div>
+                </div>   
+              </div>           
               <md-divider></md-divider>
             </div>
           </div>
         </md-sidenav> 
       </div> 
 
-      <div flex ng-class="shouldBeLockedOpen ? 'leftPadding' : 'noLeftPadding'" class="rightOfSidenav">
+      <div flex ng-class="shouldBeLockedOpen ? 'rightOfSidenav leftPadding' : 'rightOfSidenav noLeftPadding'">
         <div id="viewContainer" class="md-padding container">
           <div ng-view=""></div>
         </div>
@@ -89,7 +104,6 @@
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -98,6 +112,7 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -110,6 +125,8 @@
         <script src="scripts/directives/dictionarypopover.js"></script>
         <script src="scripts/controllers/leftSidenav.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/services/topics.js"></script>
+        <script src="scripts/directives/articlecomment.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -8,7 +8,7 @@
  * Controller of the kanshuWebApp
  */
 angular.module('kanshuWebApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', ['$scope', function ($scope) {
   	$scope.shouldBeLockedOpen = false;
 
   	$scope.toggleSidenav = function() {
@@ -16,4 +16,4 @@ angular.module('kanshuWebApp')
   	};
 
 
-  });
+  }]);

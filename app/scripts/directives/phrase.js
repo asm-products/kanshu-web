@@ -37,13 +37,12 @@ angular.module('kanshuWebApp')
 
         element.on('mouseenter', function () {
         	var rect = element[0].getBoundingClientRect()
-        	console.log(rect);
 
-        	if(scope.phrase[0] == 'punc: '){
+        	if(scope.phrase.type == 'punctuation'){
         		scope.dictionaryPopover.entry = '';
                 scope.$apply();
         	}else{
-        		scope.dictionaryPopover.entry = scope.phrase[4];
+        		scope.dictionaryPopover.entry = scope.phrase.definitions[0];
         		scope.$apply();
 
 	        	var popoverHeight = $("#dictionaryPopover").outerHeight();
