@@ -7,7 +7,7 @@
  * # phrase
  */
 angular.module('kanshuWebApp')
-  .directive('dirPhrase', function () {
+  .directive('dirPhrase', ['$timeout', function ($timeout) {
     return {
       templateUrl: '../../views/phrase.html',
       restrict: 'A',
@@ -17,6 +17,24 @@ angular.module('kanshuWebApp')
       	dictionaryPopover: '=',
       },
       link: function postLink(scope, element, attrs) {
+
+          var largerWidth = 0;
+          $timeout(function(){
+            console.log($(element[0]).children('.pinyin').width());
+            console.log($(element[0]).children().children('.hanzi').width());
+            largerWidth = Math.max(angular.element(element[0].querySelector('.pinyin'))[0].offsetWidth, angular.element(element[0].querySelector('.hanzi'))[0].clientWidth);
+            console.log(largerWidth);
+            $(element[0]).children(".inlineDef").css('width', 1.8 * largerWidth);
+            $(element[0]).children(".inlineDef").css('height', '2em');
+            $(element[0]).children(".inlineDef").css('overflow', 'hidden');
+
+          });
+          //console.log($(element[0]).children(".phrase").context.clientWidth)
+         // var largerWidth = Math.max($(element[0].children(".phrase")).width(), $(element[0].children(".pinyin")).width())
+         // console.log(largerWidth);
+       
+        
+
         element.on('mouseenter', function () {
         	var rect = element[0].getBoundingClientRect()
 
@@ -42,6 +60,7 @@ angular.module('kanshuWebApp')
 			scope.dictionaryPopover.visible = false;   
 			scope.$apply();      
         });
+
       }
     };
-  });
+  }]);

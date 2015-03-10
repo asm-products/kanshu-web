@@ -1,9 +1,11 @@
 <span class="pinyin">
 	{{phrase.type == 'punctuation' ? '&nbsp;' : phrase.pronunciation}}
 </span>
-<p class="hanzi">
+<div>
+<span class="hanzi">
 	{{phrase.type == 'punctuation' ? phrase.content : phrase.displayText}}
-</p>
-<p class="inlineDef" ng-show="showingInlineDefinitions">
+</span>
+</div>
+<p class="inlineDef" ng-class="showingInlineDefinitions? 'showInlineDef': 'hiddenInlineDef'">
 	{{phrase.type == 'punctuation' ? '&nbsp;' : phrase.definitions[0]}}
-</p>  		
+</p>

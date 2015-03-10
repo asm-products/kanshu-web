@@ -22,6 +22,19 @@
     .pinyin {
       display: inline-block;  
     }
+
+    inlineDef {
+      overflow: hidden;
+      height: 1em;
+    }
+
+    .showInlineDef {
+      display: auto;
+    }
+
+    .hiddenInlineDef {
+      display: none;
+    }
   }
 }
 
