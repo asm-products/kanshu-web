@@ -38,14 +38,17 @@
           </span>
           <span flex></span>
           <span>
-            <a href="#/">
+            <md-button class=md-raised ng-click="showLoginDialog(this, $event)" ng-hide="isLoggedIn" ng-cloak>
+                Login
+            </md-button>
+            <a href="#/" ng-show="isLoggedIn" ng-cloak>
               <img src="images/user.png"></img>
             </a>
           </span>
         </div>
       </md-toolbar>
     </div>
-    
+
     <section class="underNavbar" layout="row" flex>
       <div class="sidenavFixed">
         <md-sidenav md-is-locked-open="shouldBeLockedOpen" md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
@@ -67,15 +70,15 @@
                       </md-checkbox>
                     </div>
                   </div>
-                </div>   
-              </div>           
+                </div>
+              </div>
               <md-divider></md-divider>
             </div>
           </div>
-        </md-sidenav> 
-      </div> 
+        </md-sidenav>
+      </div>
 
-      <div flex ng-class="shouldBeLockedOpen ? 'leftPadding' : 'noLeftPadding'" class="rightOfSidenav">
+      <div flex ng-class="shouldBeLockedOpen ? 'rightOfSidenav leftPadding' : 'rightOfSidenav noLeftPadding'">
         <div id="viewContainer" class="md-padding container">
           <div ng-view=""></div>
         </div>
@@ -124,8 +127,10 @@
         <script src="scripts/directives/phrase.js"></script>
         <script src="scripts/directives/dictionarypopover.js"></script>
         <script src="scripts/controllers/leftSidenav.js"></script>
+        <script src="scripts/services/user.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/services/topics.js"></script>
+        <script src="scripts/directives/articlecomment.js"></script>
         <!-- endbuild -->
 </body>
 </html>
