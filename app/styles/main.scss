@@ -142,7 +142,8 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
 }
 
 #loginBtn[disabled] {
-  background-color: gray;
+  background-color: transparent;
+  color: gray;
 }
 
 #loginDialog {
