@@ -1,3 +1,11 @@
-<span class="punc">{{phrase[0] == 'punc: ' ? ' ' : phrase[2]}}</span>
-<p class="hanzi">{{phrase[0] == 'punc: ' ? phrase[1][0] : phrase[0]}}</p>
-<p class="inlineDef" ng-show="showingInlineDefinitions">{{phrase[0] == 'punc: ' ? '&nbsp;' : phrase[4]}}</p>  		
+<span class="pinyin">
+	{{phrase.type == 'punctuation' ? '&nbsp;' : phrase.pronunciation}}
+</span>
+<div>
+<span class="hanzi">
+	{{phrase.type == 'punctuation' ? phrase.content : phrase.displayText}}
+</span>
+</div>
+<p class="inlineDef" ng-class="showingInlineDefinitions? 'showInlineDef': 'hiddenInlineDef'">
+	{{phrase.type == 'punctuation' ? '&nbsp;' : phrase.definitions[0]}}
+</p> 

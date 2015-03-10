@@ -1,0 +1,81 @@
+/* Article Screen */
+.article {
+  margin: 0px;
+  padding: 0px;
+  
+  p, div, span {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .phrase {  
+    display: inline-block;
+    font-family: Helvetica, Arial, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif; 
+    text-align: center;
+    padding: 2px 4px 2px 0px;     
+    
+    .hanzi {
+      margin-top: -3px;
+      font-size: 180%;
+    }
+    
+    .pinyin {
+      display: inline-block;  
+    }
+
+    inlineDef {
+      overflow: hidden;
+      height: 1em;
+    }
+
+    .showInlineDef {
+      display: auto;
+    }
+
+    .hiddenInlineDef {
+      display: none;
+    }
+  }
+}
+
+
+/* Dictionary Popover */
+#dictionaryPopover {
+  position: absolute;
+  max-width: 200px;
+  background-color: #d4554b;
+  color: white;
+  padding: 10px;  
+  border-radius: 5px;
+  display: none;
+}
+
+#popoverTriangle1 {
+  content: "";
+  position: absolute;
+  bottom: -12px; /* value = - border-top-width - border-bottom-width */
+  left: 0px;
+  border: 0;
+  border-right-width: 20px; /* vary this value to change the angle of the vertex */
+  border-bottom-width: 12px; /* triangle height */
+  height: 0px; 
+  border-style: solid;
+  border-color: transparent #d4554b;
+  width: 0;
+  display: none;
+}
+
+#popoverTriangle2 {
+  content: "";
+  position: absolute;
+  bottom: -12px; /* value = - border-top-width - border-bottom-width */
+  left: 0px;
+  border: 0;
+  border-bottom-width: 12px; /* triangle height */
+  border-right-width: 5px; /* vary this value to change the angle of the vertex */
+  height: 0px; 
+  border-style: solid;
+  border-color: transparent #ffffff;
+  width: 0;
+  display: none;
+}
