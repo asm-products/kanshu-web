@@ -1,18 +1,22 @@
-<md-dialog flex="25" id="loginDialog">
-    <md-content style="background: transparent">
-        <section layout="vertical" layout-sm="horizontal" layout-align="center center">
-          <img style="margin: auto; max-width: 100%; width: 33%" src="images/kanshu_logo.png">
-        </section>
-        <md-input-container>
-            <label>Email</label>
-            <input ng-model="user.email" class="dialog-close" style="background-color: white"></input>
-        </md-input-container>
-        <md-input-container>
-            <label>Password</label>
-            <input ng-model="user.password" style="background-color: white"></input>
-        </md-input-container>
-    </md-content>
-    <div class="md-actions">
-        <md-button class="md-raised md-primary" type="submit" ng-click="submit()" id="loginBtn">Login</md-button>
-    </div>
-</md-dialog>
+<div style="margin: 0 auto">
+    <md-dialog flex="25" id="loginDialog">
+      <md-content style="background: transparent">
+          <section layout="vertical" layout-sm="horizontal" layout-align="center center">
+            <img style="margin: auto; max-width: 100%; width: 33%; min-width: 80px; margin-top: 10px; margin-bottom: 10px" src="images/kanshu_logo.png">
+          </section>
+          <md-input-container>
+              <label>Email</label>
+              <input ng-model="user.email" class="dialog-close" style="background-color: white"></input>
+          </md-input-container>
+          <md-input-container>
+              <label>Password</label>
+              <input type="password" ng-model="user.password" style="background-color: white"></input>
+          </md-input-container>
+      </md-content>
+      <div class="md-actions">
+          <md-button class="md-raised md-primary" type="submit" ng-click="submit()" id="loginBtn"
+                     ng-disabled="!user.email || !user.password">Login</md-button>
+      </div>
+  </md-dialog>
+  <div class="login-create-account">Not registered? <a href="#/signup">Create account.</a></div>
+</div>

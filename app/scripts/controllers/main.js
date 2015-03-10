@@ -20,6 +20,7 @@ angular.module('kanshuWebApp')
 
     $scope.login = function(user) {
       $scope.isLoggedIn = UserService.login(user.email, user.password);
+      return $scope.isLoggedIn;
     };
 
     $scope.logout = function() {
@@ -27,22 +28,23 @@ angular.module('kanshuWebApp')
       $scope.isLoggedIn = false;
     };
 
-    $scope.showLoginDialog = function(ev) {
+    $scope.showLoginDialog = function($oscope, ev) {
             $mdDialog.show({
                 templateUrl: 'views/login-dialog.html',
                 targetEvent: ev,
                 controller: function($scope, $mdDialog) {
                               $scope.submit = function() {
-                                  $mdDialog.hide($scope.user);
+                                  if ($oscope.login($scope.user)) {
+                                    $mdDialog.hide($scope.user);
+                                  } else {
+                                    console.log('Login error');
+                                  }
                               };
 
                               $scope.cancel = function() {
                                   $mdDialog.cancel();
                               };
                           }
-            })
-            .then(function(user) {
-                $scope.login(user);
             });
         };
 

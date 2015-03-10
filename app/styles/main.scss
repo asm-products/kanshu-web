@@ -136,7 +136,13 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
   text-transform: none;
 }
 
+#loginBtn[disabled] {
+  background-color: gray;
+}
+
 #loginDialog {
+  margin: 0 auto;
+  max-width: 80%;
   background: #ebebeb;
   background: -moz-linear-gradient(-45deg,  #ebebeb 0%, #ebebeb 50%, #e5e5e5 51%, #e5e5e5 100%);
   background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ebebeb), color-stop(50%,#ebebeb), color-stop(51%,#e5e5e5), color-stop(100%,#e5e5e5));
@@ -147,9 +153,25 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#e5e5e5',GradientType=1 );
 }
 
+.login-create-account {
+  float: right;
+  color: white;
+  margin-right: 10%;
+  margin-top: 5px;
+}
+
+.login-create-account a {
+  color: rgb(231, 95, 91);
+  text-decoration: none;
+}
+
 md-input-container.md-input-focused label {
   font-weight: bold;
   font-size: 1.5em;
+}
+
+div.md-dialog-container {
+  background-color: rgba(15, 15, 15, 0.8);
 }
 
 /* Responsive: Portrait tablets and up */
