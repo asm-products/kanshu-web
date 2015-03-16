@@ -1,0 +1,22 @@
+.signUpDialog {
+  background: #ebebeb;
+  background: -moz-linear-gradient(-45deg,  #ebebeb 0%, #ebebeb 50%, #e5e5e5 51%, #e5e5e5 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#ebebeb), color-stop(50%,#ebebeb), color-stop(51%,#e5e5e5), color-stop(100%,#e5e5e5));
+  background: -webkit-linear-gradient(-45deg,  #ebebeb 0%,#ebebeb 50%,#e5e5e5 51%,#e5e5e5 100%);
+  background: -o-linear-gradient(-45deg,  #ebebeb 0%,#ebebeb 50%,#e5e5e5 51%,#e5e5e5 100%);
+  background: -ms-linear-gradient(-45deg,  #ebebeb 0%,#ebebeb 50%,#e5e5e5 51%,#e5e5e5 100%);
+  background: linear-gradient(135deg,  #ebebeb 0%,#ebebeb 50%,#e5e5e5 51%,#e5e5e5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#e5e5e5',GradientType=1 );
+
+  input {
+    background-color: white;
+  }
+
+  md-content {
+    background-color: transparent;
+  }
+
+  .headerImage {
+    position: absolute;
+  }
+}

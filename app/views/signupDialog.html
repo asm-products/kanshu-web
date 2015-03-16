@@ -1,27 +1,25 @@
-<md-dialog aria-label="Sign up" flex="80">
-  <md-toolbar class="md-accent">
-    <div class="md-toolbar-tools">Sign up</div>
-  </md-toolbar>
-  <div layout="column">
-    <md-content class="md-padding" layout="column">
-      <md-input-container>
-        <label>Email</label>
-        <input type="email" ng-model="user.email">
-      </md-input-container>
-      <md-input-container>
-        <label>Username</label>
-        <input ng-model="user.username">
-      </md-input-container>
-      <md-input-container>
-        <label>Password</label>
-        <input type="password" ng-model="user.password">
-      </md-input-container>
-      <md-input-container>
-        <label>Password (again)</label>
-        <input type="password" ng-model="user.passwordConfirm">
-      </md-input-container>
-    </md-content>
-  </div>
+<md-dialog aria-label="Sign up" flex="80" class="signUpDialog">
+  <md-content class="md-padding" layout="column">
+    <div class="headerImage">
+      <img src="images/signup_header.png" alt="Sign Up" aria-text="sign up">
+    </div>
+    <md-input-container>
+      <label>Email</label>
+      <input type="email" ng-model="user.email">
+    </md-input-container>
+    <md-input-container>
+      <label>Username</label>
+      <input ng-model="user.username">
+    </md-input-container>
+    <md-input-container>
+      <label>Password</label>
+      <input type="password" ng-model="user.password">
+    </md-input-container>
+    <md-input-container>
+      <label>Password (again)</label>
+      <input type="password" ng-model="user.passwordConfirm">
+    </md-input-container>
+  </md-content>
   <div class="md-actions">
     <md-button class="md-accent md-raised" ng-click="signUp()">
       Sign Up
