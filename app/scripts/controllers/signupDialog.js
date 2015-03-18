@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kanshuWebApp').controller('SignupDialogCtrl', function SignupDialogCtrl($scope, $mdDialog, $rootScope, $location, UserService) {
+angular.module('kanshuWebApp').controller('SignupDialogCtrl', ['$scope', '$mdDialog', '$rootScope', '$location', 'UserService', function SignupDialogCtrl($scope, $mdDialog, $rootScope, $location, UserService) {
   $scope.user = {};
   $scope.showLoginDialog = $rootScope.showLoginDialog;
   $scope.signUp = function signUp() {
@@ -11,5 +11,5 @@ angular.module('kanshuWebApp').controller('SignupDialogCtrl', function SignupDia
       $mdDialog.hide();
     });
   };
-});
+}]);
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('kanshuWebApp').controller('SignupCtrl', function SignupCtrl($scope, $mdDialog, $location) {
+angular.module('kanshuWebApp').controller('SignupCtrl', ['$scope', '$mdDialog', '$location', function SignupCtrl($scope, $mdDialog, $location) {
   $mdDialog.show({
     parent: angular.element(document.body),
     templateUrl: 'views/signupDialog.html',
@@ -10,4 +10,4 @@ angular.module('kanshuWebApp').controller('SignupCtrl', function SignupCtrl($sco
   }, function(){
   	$location.path('/articles');
   });
-});
+}]);
