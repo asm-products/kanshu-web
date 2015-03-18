@@ -136,13 +136,13 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
 }
 
 /* Login button */
-#loginBtn {
+#loginBtn, .signupBtn {
   background-color: rgb(231, 95, 91);
   color: white;
   text-transform: none;
 }
 
-#loginBtn[disabled] {
+#loginBtn[disabled], .signupBtn[disabled] {
   background-color: transparent;
   color: gray;
 }

@@ -1,8 +1,8 @@
 <div flex="35" style="margin: 0 auto" class="signUpContainer">
   <md-dialog aria-label="Sign up" flex="80" class="signUpDialog">
     <img class="headerImage" src="images/signup_header.png" alt="Sign Up" aria-text="sign up">
-    <md-content class="md-padding" layout="column">
-      <md-input-container ng-form="signupForm">
+    <md-content class="md-padding" layout="column" ng-form="signupForm">
+      <md-input-container>
         <label>Email</label>
         <input type="email" class="dialog-close" ng-model="user.email" ng-required="true">
       </md-input-container>
@@ -27,7 +27,7 @@
       </md-select>
     </md-content>
     <div class="md-actions">
-      <md-button class="md-accent md-raised" ng-click="signUp()" ng-disable="!signupForm.$valid">
+      <md-button class="md-accent md-raised signupBtn" ng-click="signUp()" ng-disabled="!signupForm.$valid">
         Sign Up
       </md-button>
     </div>
