@@ -22,8 +22,8 @@ angular.module('kanshuWebApp')
       return false;
     };
 
-    api.signUp = function(callback) {
-      console.log('Call signup service');
+    api.signUp = function(data, callback) {
+      console.log('Call signup service', data);
       callback();
       return true;
     };
