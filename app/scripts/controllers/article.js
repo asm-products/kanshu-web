@@ -16,15 +16,15 @@ angular.module('kanshuWebApp')
     $scope.toggle = function() {
     	$scope.showingInlineDefinitions = !$scope.showingInlineDefinitions;
     	if($scope.showingInlineDefinitions){
-    		$(".inlineDef").css("display: inline-block");
+    		angular.element(".inlineDef").css("display: inline-block");
     	}else{
-       		$(".inlineDef").css("display: none");
+       		angular.element(".inlineDef").css("display: none");
     	}
-    }
+    };
 
     $scope.change = function() {
-    	$scope.dictionaryPopover.entry = "Changed"
-    }
+    	$scope.dictionaryPopover.entry = "Changed";
+    };
 
     $scope.sample = {
     "article": [
