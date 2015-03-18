@@ -8,8 +8,8 @@
  * Controller of the kanshuWebApp
  */
 angular.module('kanshuWebApp')
-  .controller('MainCtrl', ['$scope', 'UserService', '$mdDialog',
-                  function ($scope, UserService, $mdDialog) {
+  .controller('MainCtrl', ['$scope', 'UserService', '$mdDialog', '$rootScope',
+                  function ($scope, UserService, $mdDialog, $rootScope) {
   	$scope.shouldBeLockedOpen = false;
 
     $scope.isLoggedIn = false;
@@ -22,6 +22,7 @@ angular.module('kanshuWebApp')
       $scope.isLoggedIn = UserService.login(user.email, user.password);
       return $scope.isLoggedIn;
     };
+
 
     $scope.logout = function() {
       UserService.logout();
@@ -48,4 +49,6 @@ angular.module('kanshuWebApp')
             });
         };
 
-  }]);
+  $rootScope.showLoginDialog = $scope.showLoginDialog;
+  }
+]);

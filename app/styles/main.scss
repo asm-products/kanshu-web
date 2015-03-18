@@ -147,7 +147,7 @@ $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !defa
   color: gray;
 }
 
-#loginDialog {
+#loginDialog, .signUpDialog {
   margin: 0 auto;
   max-width: 80%;
   background: #ebebeb;

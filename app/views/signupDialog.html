@@ -1,28 +1,36 @@
-<md-dialog aria-label="Sign up" flex="80" class="signUpDialog">
-  <md-content class="md-padding" layout="column">
-    <div class="headerImage">
-      <img src="images/signup_header.png" alt="Sign Up" aria-text="sign up">
+<div flex="35" style="margin: 0 auto" class="signUpContainer">
+  <md-dialog aria-label="Sign up" flex="80" class="signUpDialog">
+    <img class="headerImage" src="images/signup_header.png" alt="Sign Up" aria-text="sign up">
+    <md-content class="md-padding" layout="column">
+      <md-input-container ng-form="signupForm">
+        <label>Email</label>
+        <input type="email" class="dialog-close" ng-model="user.email" ng-required="true">
+      </md-input-container>
+      <md-input-container>
+        <label>Username</label>
+        <input ng-model="user.username" ng-required="true">
+      </md-input-container>
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" ng-model="user.password" ng-required="true">
+      </md-input-container>
+      <md-input-container ng-if="false"> <!-- Maybe we do want a password confirmation? -->
+        <label>Password (again)</label>
+        <input type="password" ng-model="user.passwordConfirm" ng-required="true">
+      </md-input-container>
+      <md-select ng-model="user.readingAbility" ng-required="true" placeholder="Current reading ability">
+        <md-option ng-value="'None'">None</md-option>
+        <md-option ng-value="'Beginner'">Beginner</md-option>
+        <md-option ng-value="'Intermediate'">Intermediate</md-option>
+        <md-option ng-value="'Advanced'">Advanced</md-option>
+        <md-option ng-value="'Fluent'">Fluent</md-option>
+      </md-select>
+    </md-content>
+    <div class="md-actions">
+      <md-button class="md-accent md-raised" ng-click="signUp()" ng-disable="!signupForm.$valid">
+        Sign Up
+      </md-button>
     </div>
-    <md-input-container>
-      <label>Email</label>
-      <input type="email" ng-model="user.email">
-    </md-input-container>
-    <md-input-container>
-      <label>Username</label>
-      <input ng-model="user.username">
-    </md-input-container>
-    <md-input-container>
-      <label>Password</label>
-      <input type="password" ng-model="user.password">
-    </md-input-container>
-    <md-input-container>
-      <label>Password (again)</label>
-      <input type="password" ng-model="user.passwordConfirm">
-    </md-input-container>
-  </md-content>
-  <div class="md-actions">
-    <md-button class="md-accent md-raised" ng-click="signUp()">
-      Sign Up
-    </md-button>
-  </div>
-</md-dialog>
+  </md-dialog>
+  <div class="login-create-account">Already have an account? <a href="javascript:void(0)" ng-click="showLoginDialog()">Login</a></div>
+</div>
