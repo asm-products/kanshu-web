@@ -1,43 +1,53 @@
 /* Article Screen */
 .article {
-  margin: 0px;
   padding: 0px;
+  width: 80%;
+  margin: 40px auto;
+
+  box-shadow: $whiteframe-shadow-z1;
   
   p, div, span {
     margin: 0px;
     padding: 0px;
   }
 
-  .phrase {  
-    display: inline-block;
-    font-family: Helvetica, Arial, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif; 
-    text-align: center;
-    padding: 2px 4px 2px 0px;     
-    
-    .hanzi {
-      margin-top: -3px;
-      font-size: 180%;
-    }
-    
-    .pinyin {
-      display: inline-block;  
-    }
+  img{
+    width: 100%;
+  }
 
-    inlineDef {
-      overflow: hidden;
-      height: 1em;
-    }
+  .article_content{
+    padding: 16px;
 
-    .showInlineDef {
-      display: auto;
-    }
+    .phrase {  
+      display: inline-block;
+      font-family: Helvetica, Arial, "Times New Roman", "FangSong", "仿宋", STFangSong, "华文仿宋", serif; 
+      text-align: center;
+      padding: 2px 4px 2px 0px;     
+      
+      .hanzi {
+        margin-top: -3px;
+        font-size: 180%;
+      }
+      
+      .pinyin {
+        display: inline-block;  
+      }
 
-    .hiddenInlineDef {
-      display: none;
+      inlineDef {
+        overflow: hidden;
+        height: 1em;
+      }
+
+      .showInlineDef {
+        display: auto;
+      }
+
+      .hiddenInlineDef {
+        display: none;
+      }
     }
   }
 }
-
 
 /* Dictionary Popover */
 #dictionaryPopover {

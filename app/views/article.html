@@ -1,9 +1,10 @@
 <div class="article">
-  <h1>Article</h1>
-  <dictionary-popover></dictionary-popover>
-  <button id="inline-def-button" type="button" class="btn btn-default" ng-click="toggle()">Toggle inline definitions</button>
+	<img src="http://lorempixel.com/400/100"></img>
+	<div class="article_content">
 
-  	<div dir-phrase class="phrase" p="phrase" showing-inline-definitions="showingInlineDefinitions" dictionary-popover="dictionaryPopover" ng-repeat="phrase in sample.article track by $index">
+	  	<dictionary-popover></dictionary-popover>
+
+	  	<div dir-phrase class="phrase" p="phrase" showing-inline-definitions="showingInlineDefinitions" dictionary-popover="dictionaryPopover" ng-repeat="phrase in sample.article track by $index">
+	  	</div>
   	</div>
-
 </div>

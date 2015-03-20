@@ -21,10 +21,7 @@ angular.module('kanshuWebApp')
           var largerWidth = 0;
           var $ = angular.element;
           $timeout(function(){
-            console.log($(element[0]).children('.pinyin').width());
-            console.log($(element[0]).children().children('.hanzi').width());
             largerWidth = Math.max(angular.element(element[0].querySelector('.pinyin'))[0].offsetWidth, angular.element(element[0].querySelector('.hanzi'))[0].clientWidth);
-            console.log(largerWidth);
             $(element[0]).children(".inlineDef").css('width', 1.8 * largerWidth);
             $(element[0]).children(".inlineDef").css('height', '2em');
             $(element[0]).children(".inlineDef").css('overflow', 'hidden');
