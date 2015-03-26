@@ -49,6 +49,40 @@
   }
 }
 
+.articleIcons{
+  position: fixed;
+  left: calc(90%);
+  top: $navbarHeight + 40px;
+
+  a{
+    text-decoration: none;
+  }
+
+  i{
+    transition: color 0.2s ease;
+    width: 50px;
+    display: block;
+    padding: 0px 10px 20px;
+    color: #aaaaaa;
+  }
+
+  i:hover{
+    color: $kanshu-red;
+  }
+
+  i.fa-twitter:hover{
+    color: $twitter-blue;
+  }
+
+  i.fa-google-plus:hover{
+    color: $google-plus-red;
+  }
+
+  i.fa-facebook:hover{
+    color: $facebook-blue;
+  }
+}
+
 /* Dictionary Popover */
 #dictionaryPopover {
   position: absolute;
