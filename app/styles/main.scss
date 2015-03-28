@@ -21,20 +21,10 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 0px;
   z-index: 9999;
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-
   img {
-    max-height: $navbarHeight - 16px;
+    height: $navbarHeight - 16px;
     margin: 8px 10px;
   }
 
@@ -42,9 +32,14 @@ body {
     position: fixed;
   }
 
-  .navbar-right{
-    display: inline-block;
-    float: right;
+  span {
+    display: flex;
+    justify-content: center;
+
+    a {
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 
@@ -189,7 +184,6 @@ div.md-dialog-container {
   }
 
   /* Remove the padding we set earlier */
-  .header,
   .footer {
     padding-left: 0;
     padding-right: 0;
