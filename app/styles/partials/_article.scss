@@ -1,8 +1,10 @@
 /* Article Screen */
 .article {
   padding: 0px;
-  width: 80%;
-  margin: 40px auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   box-shadow: $whiteframe-shadow-z1;
   
@@ -49,11 +51,15 @@
   }
 }
 
-.articleIcons{
-  position: fixed;
-  left: calc(90%);
-  top: $navbarHeight + 40px;
+@media screen and (min-width: 35em) {
+  .article {
+    padding: 0px;
+    width: 80%;
+    margin: 40px auto;  
+  }
+}
 
+.articleIcons {
   a{
     text-decoration: none;
   }
@@ -61,7 +67,7 @@
   i{
     transition: color 0.2s ease;
     width: 50px;
-    display: block;
+    display: inline-block;
     padding: 0px 10px 20px;
     color: #aaaaaa;
   }
@@ -80,6 +86,18 @@
 
   i.fa-facebook:hover{
     color: $facebook-blue;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .articleIcons{
+    position: fixed;
+    left: calc(90%);
+    top: $navbarHeight + 40px;
+
+    i{ 
+      display: block;
+    }
   }
 }
 

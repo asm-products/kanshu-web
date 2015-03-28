@@ -7,28 +7,29 @@
 	  	<div dir-phrase class="phrase" p="phrase" showing-inline-definitions="showingInlineDefinitions" dictionary-popover="dictionaryPopover" ng-repeat="phrase in sample.article track by $index">
 	  	</div>
   	</div>
-</div>
-<div class="articleIcons">
-	<a>
-		<i class="fa fa-heart fa-fw fa-2x"></i>
-	</a>
-	<a href="https://twitter.com">
-		<i class="fa fa-twitter fa-fw fa-2x"></i>
-	</a>
-	<a href="https://facebook.com">
-		<i class="fa fa-facebook fa-fw fa-2x"></i>
-	</a>
-	<a href="https://google.com">
-		<i class="fa fa-google-plus fa-fw fa-2x"></i>
-	</a>
-	<a>
-		<i class="fa fa-envelope-o fa-fw fa-2x"></i>
-	</a>
-	<a>
-		<i class="fa fa-comment fa-fw fa-2x"></i>
-	</a>
-	<a ng-click="toggle()">
-	    <i ng-class="showingInlineDefinitions ? 'fa fa-toggle-on' : 'fa fa-toggle-off'" class="fa-fw fa-2x"></i>
-	</a>
+  	<div class="articleIcons">
+		<a>
+			<i class="fa fa-heart fa-fw fa-2x"></i>
+		</a>
+		<a>
+			<i class="fa fa-comment fa-fw fa-2x"></i>
+		</a>	
+		<a href="https://twitter.com">
+			<i class="fa fa-twitter fa-fw fa-2x"></i>
+		</a>
+		<a href="https://facebook.com">
+			<i class="fa fa-facebook fa-fw fa-2x"></i>
+		</a>
+		<a href="https://google.com">
+			<i class="fa fa-google-plus fa-fw fa-2x"></i>
+		</a>
+		<a>
+			<i class="fa fa-envelope-o fa-fw fa-2x"></i>
+		</a>
+		<a ng-click="toggle()">
+		    <i ng-class="showingInlineDefinitions ? 'fa fa-toggle-on' : 'fa fa-toggle-off'" class="fa-fw fa-2x"></i>
+		</a>
 
+	</div>
 </div>
+
