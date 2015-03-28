@@ -1,12 +1,8 @@
 /* Article Screen */
 .article {
-  padding: 0px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-
-  box-shadow: $whiteframe-shadow-z1;
   
   p, span {
     margin: 0px;
@@ -51,12 +47,11 @@
   }
 }
 
-@media screen and (min-width: 35em) {
-  .article {
-    padding: 0px;
-    width: 80%;
-    margin: 40px auto;  
-  }
+.articleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px auto;
 }
 
 .articleIcons {
@@ -90,15 +85,30 @@
 }
 
 @media screen and (min-width: 768px) {
+  .article {
+    padding: 0px;
+    width: 700px;
+    margin: 40px 20px 40px 70px;  
+    flex-direction: column;
+    box-shadow: $whiteframe-shadow-z1;
+  }
+
+  .articleContainer {
+    box-shadow: none;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px;
+  }
+
   .articleIcons{
-    position: fixed;
-    left: calc(90%);
-    top: $navbarHeight + 40px;
+    padding-top: 40px;
+    padding-right: 20px;
 
     i{ 
       display: block;
     }
-  }
+  }  
 }
 
 /* Dictionary Popover */
