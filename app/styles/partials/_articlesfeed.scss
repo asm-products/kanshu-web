@@ -72,7 +72,7 @@ $cardBaseWidth: 350px;
 
 .articleCardContent{
   position: relative;
-  height: 275px;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -126,7 +126,7 @@ article-comment {
   width: 100%;
   position: relative;
   height: 0;
-  padding: 50% 0 0 0;
+  padding: 56.25% 0 0 0;
   overflow: hidden;
 
   img { 
@@ -150,7 +150,7 @@ md-dialog.selectedArticle {
 
     .articleCardContentItemSelected {
       padding: $card-padding;
-      height: 150px;
+      height: 140px;
     }
   }
 
