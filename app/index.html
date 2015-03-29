@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js">
   <head>
     <meta charset="utf-8">
@@ -48,48 +48,49 @@
         </div>
       </md-toolbar>
     </div>
+      <md-content layout="row">
+          <section class="underNavbar" layout="row" flex>
+              <div class="sidenavFixed">
+                  <md-sidenav md-is-locked-open="shouldBeLockedOpen" md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
+                      <div ng-controller="LeftSidenavCtrl">
+                          <div class="sidenavUser">
 
-    <section class="underNavbar" layout="row" flex>
-      <div class="sidenavFixed">
-        <md-sidenav md-is-locked-open="shouldBeLockedOpen" md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
-          <div ng-controller="LeftSidenavCtrl">
-            <div class="sidenavUser">
-
-            </div>
-            <div ng-repeat="group in rows">
-              <div ng-repeat="item in group">
-                <md-button class="sidenavRow" ng-click="item.onClick()">
-                  <img ng-src="{{item.src}}"></img>
-                  <span>{{item.text}}</span>
-                </md-button>
-                <div ng-if="item.type === 'toggle'">
-                  <div class="sidenavAllTopics" ng-if="showingTopics">
-                    <div class="sidenavTopic" ng-repeat="topic in getTopics()">
-                      <md-checkbox ng-model="topic.checked" ng-change="topicsChanged(topic.topic)">
-                        {{topic.topic}}
-                      </md-checkbox>
-                    </div>
-                  </div>
-                </div>
+                          </div>
+                          <div ng-repeat="group in rows">
+                              <div ng-repeat="item in group">
+                                  <md-button class="sidenavRow" ng-click="item.onClick()">
+                                      <img ng-src="{{item.src}}"></img>
+                                      <span>{{item.text}}</span>
+                                  </md-button>
+                                  <div ng-if="item.type === 'toggle'">
+                                      <div class="sidenavAllTopics" ng-if="showingTopics">
+                                          <div class="sidenavTopic" ng-repeat="topic in getTopics()">
+                                              <md-checkbox ng-model="topic.checked" ng-change="topicsChanged(topic.topic)">
+                                                  {{topic.topic}}
+                                              </md-checkbox>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <md-divider></md-divider>
+                          </div>
+                      </div>
+                  </md-sidenav>
               </div>
-              <md-divider></md-divider>
-            </div>
-          </div>
-        </md-sidenav>
-      </div>
 
-      <div flex ng-class="shouldBeLockedOpen ? 'rightOfSidenav leftPadding' : 'rightOfSidenav noLeftPadding'">
-        <div id="viewContainer" class="md-padding container">
-          <div ng-view=""></div>
-        </div>
+              <div flex ng-class="shouldBeLockedOpen ? 'rightOfSidenav leftPadding' : 'rightOfSidenav noLeftPadding'">
+                  <div id="viewContainer" class="md-padding container">
+                      <div ng-view=""></div>
+                  </div>
 
-        <div class="footer">
-          <div class="container">
-            <p>Kanshu all rights reserved &copy 2015</p>
-          </div>
-        </div>
-      </div>
-    </section>
+                  <div class="footer">
+                      <div class="container">
+                          <p>Kanshu all rights reserved &copy 2015</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      </md-content>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
