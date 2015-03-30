@@ -53,8 +53,11 @@
               <div class="sidenavFixed">
                   <md-sidenav md-is-locked-open="shouldBeLockedOpen" md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
                       <div ng-controller="LeftSidenavCtrl">
-                          <div class="sidenavUser">
-
+                          <div ng-if="isLoggedIn" class="sidenavUser">
+                              <img class="sidenavUserpic" ng-src="{{user.accountData.pic}}" />
+                              <span class="sidenavUserTitle">{{user.accountData.firstName}} {{user.accountData.lastName}}</span>
+                          </div>
+                          <div ng-if="!isLoggedIn" class="sidenavUser">
                           </div>
                           <div ng-repeat="group in rows">
                               <div ng-repeat="item in group">

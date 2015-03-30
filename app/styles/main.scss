@@ -104,6 +104,23 @@ body {
   min-height: 150px;
 }
 
+.sidenavUserpic{
+    border-radius: 10px;
+    width:35%;
+    margin-top:25%;
+    margin-left: 25px;
+}
+
+.sidenavUserTitle
+{
+    font-size: 14pt;
+    font-weight:bold;
+    padding:5px;
+    display:block;
+    color:white;
+    padding-left: 30px;
+}
+
 $swift-ease-in-duration: 0.3s !default;
 $swift-ease-in-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2) !default;
 $swift-ease-in: all $swift-ease-in-duration $swift-ease-in-timing-function !default;

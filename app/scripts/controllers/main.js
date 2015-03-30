@@ -8,8 +8,8 @@
  * Controller of the kanshuWebApp
  */
 angular.module('kanshuWebApp')
-  .controller('MainCtrl', ['$scope', 'UserService', '$mdDialog', '$rootScope',
-                  function ($scope, UserService, $mdDialog, $rootScope) {
+  .controller('MainCtrl', ['$scope', '$cookieStore','UserService','$mdDialog', '$rootScope',
+                  function ($scope, $cookieStore, UserService, $mdDialog, $rootScope) {
   	$scope.shouldBeLockedOpen = false;
 
     $scope.isLoggedIn = false;
@@ -18,8 +18,12 @@ angular.module('kanshuWebApp')
   		$scope.shouldBeLockedOpen = !$scope.shouldBeLockedOpen;
   	};
 
-    $scope.login = function(user) {
-      $scope.isLoggedIn = UserService.login(user.email, user.password);
+  	$scope.login = function (user) {
+  	  user.accountData = {};
+  	  $scope.isLoggedIn = UserService.login(user.email, user.password, user.accountData);
+  	  var expireDate = new Date();
+  	  expireDate = new Date(expireDate.getTime() + 2 * 60 * 60 * 1000); //replace with actual expiration value of the session
+  	  $cookieStore.put("kanshu_sessionId", "yourSessionIdHere", { 'expires': expireDate });
       return $scope.isLoggedIn;
     };
 
@@ -36,7 +40,8 @@ angular.module('kanshuWebApp')
                 controller: function($scope, $mdDialog) {
                               $scope.submit = function() {
                                   if ($oscope.login($scope.user)) {
-                                    $mdDialog.hide($scope.user);
+                                      $mdDialog.hide($scope.user);
+                                      $oscope.user = $scope.user;
                                   } else {
                                     console.log('Login error');
                                   }
