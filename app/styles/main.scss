@@ -217,15 +217,14 @@ div.md-dialog-container {
 }
 
 .accountMain #userpic{
-    width:35%;
+    width:100px;
     position:relative;
     border-radius:10px;
 }
 
 .accountMain #editPic{
     position:relative;
-    top:-25px;
-    left:-25%;
+    top:-100px;
     width:24px;
     height:24px;
 }
@@ -260,6 +259,12 @@ div.md-dialog-container {
   box-shadow: rgba(200,200,200,0.8) 2px 2px 2px,rgba(200,200,200,0.8) -2px -2px 2px;
   display: none;
   z-index:99999;
+}
+
+#accountMenu div{
+    cursor: pointer;
+    padding-bottom:5px;
+    padding-top:5px;
 }
 
 #menuTriangle1 {

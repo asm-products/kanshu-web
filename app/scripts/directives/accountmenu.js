@@ -9,7 +9,7 @@
 angular.module('kanshuWebApp')
   .directive('accountMenu', function () {
       return {
-          template: '<div id="accountMenu"><div>My Account</div><div>Sign out</div></div><div id="menuTriangle1"></div><div id="menuTriangle2"></div>',
+          template: '<div id="accountMenu"><div ng-click="goTo(\'account\')">My Account</div><div>Sign out</div></div><div id="menuTriangle1"></div><div id="menuTriangle2"></div>',
           restrict: 'E',
           link: function postLink(scope) {
               var $ = angular.element;
