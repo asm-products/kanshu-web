@@ -206,3 +206,41 @@ div.md-dialog-container {
     padding-right: 0;
   }
 }
+
+/* Account page */
+.accountMain {
+    margin-left:35%;
+    margin-right:35%;
+    padding-top:30px;
+    font-size:10px;
+    text-align:center;
+}
+
+.accountMain #userpic{
+    width:35%;
+    position:relative;
+    border-radius:10px;
+}
+
+.accountMain #editPic{
+    position:relative;
+    top:-25px;
+    left:-25%;
+    width:24px;
+    height:24px;
+}
+
+
+.accountMain .editPen {
+    width:12px;
+    height:12px;
+}
+
+.accountMain span{
+    display:block;
+   padding-top:10px;
+}
+
+.accountMain div{
+    padding-top:40px;
+}

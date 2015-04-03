@@ -8,8 +8,8 @@
  * Controller of the kanshuWebApp
  */
 angular.module('kanshuWebApp')
-  .controller('MainCtrl', ['$scope', '$cookieStore','UserService','$mdDialog', '$rootScope',
-                  function ($scope, $cookieStore, UserService, $mdDialog, $rootScope) {
+  .controller('MainCtrl', ['$scope', '$location', '$cookieStore','UserService','$mdDialog', '$rootScope',
+                  function ($scope, $location, $cookieStore, UserService, $mdDialog, $rootScope) {
   	$scope.shouldBeLockedOpen = false;
 
     $scope.isLoggedIn = false;
@@ -18,9 +18,14 @@ angular.module('kanshuWebApp')
   		$scope.shouldBeLockedOpen = !$scope.shouldBeLockedOpen;
   	};
 
+  	$scope.goTo = function (viewName) {
+  	    $location.path(viewName);
+  	};
+
   	$scope.login = function (user) {
   	  user.accountData = {};
-  	  $scope.isLoggedIn = UserService.login(user.email, user.password, user.accountData);
+  	  $scope.isLoggedIn = UserService.login(user.email, user.password);
+  	  user.accountData = UserService.getCurrentUser();
   	  var expireDate = new Date();
   	  expireDate = new Date(expireDate.getTime() + 2 * 60 * 60 * 1000); //replace with actual expiration value of the session
   	  $cookieStore.put("kanshu_sessionId", "yourSessionIdHere", { 'expires': expireDate });

@@ -1,0 +1,13 @@
+<div class="accountMain">
+    <div>
+    <img id="userpic" ng-src="{{user.accountData.pic}}" />
+        <img id="editPic" src="images/ic_create_48px_white.svg" />
+        </div>
+    <span>{{user.accountData.firstName}} {{user.accountData.lastName}}<img class="editPen"  src="images/ic_create_48px.svg" /></span>
+    <span>{{user.accountData.country}}<img class="editPen" src="images/ic_create_48px.svg" /></span>
+    <div>{{user.accountData.bio}}<img class="editPen" src="images/ic_create_48px.svg" /></div>
+
+    <div id="userMetricsInfo">
+        <span>{{user.userMetrics.articlesRead}} articles read | {{user.userMetrics.charactersSaved}} characters saved | {{user.userMetrics.charactersMastered}} characters mastered  </span>
+    </div>
+</div>
