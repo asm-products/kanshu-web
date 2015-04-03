@@ -10,7 +10,9 @@
 angular.module('kanshuWebApp')
   .controller('MainCtrl', ['$scope', '$location', '$cookieStore','UserService','$mdDialog', '$rootScope',
                   function ($scope, $location, $cookieStore, UserService, $mdDialog, $rootScope) {
-  	$scope.shouldBeLockedOpen = false;
+                      $scope.shouldBeLockedOpen = false;
+                      $scope.accountMenu = {};
+                      $scope.accountMenu.visible = false;
 
     $scope.isLoggedIn = false;
 
@@ -59,6 +61,9 @@ angular.module('kanshuWebApp')
             });
         };
 
+    $scope.showUserMenu = function () {
+        $scope.accountMenu.visible = !$scope.accountMenu.visible
+    }
   $rootScope.showLoginDialog = $scope.showLoginDialog;
   }
 ]);
