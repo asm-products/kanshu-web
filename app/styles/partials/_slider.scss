@@ -10,5 +10,18 @@
   .hsk-slider {
     width: 70%;
   }
+
+  .md-track-ticks {
+    display: none;
+  }
+
+  md-slider .md-sign {
+    top: -26px;
+  }
+
+  md-slider .md-thumb {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
 }
 
