@@ -1,41 +1,44 @@
 <div class="articleContainer">
-	<div class="article">
-		<div class="imageWrapper">
-			<img src="http://lorempixel.com/800/450"></img>
-		</div>
-		<div class="article_content">
-
-		  	<dictionary-popover></dictionary-popover>
-
-		  	<div dir-phrase class="phrase" p="phrase" showing-inline-definitions="showingInlineDefinitions" dictionary-popover="dictionaryPopover" ng-repeat="phrase in sample.article track by $index">
-		  	</div>
-	  	</div>
-	</div>
-  	<div class="articleIcons">
-		<a>
-			<i class="fa fa-heart fa-fw fa-2x"></i>
-		</a>
-		<a>
-			<i class="fa fa-comment fa-fw fa-2x"></i>
-		</a>	
-		<a href="https://twitter.com">
-			<i class="fa fa-twitter fa-fw fa-2x"></i>
-		</a>
-		<a href="https://facebook.com">
-			<i class="fa fa-facebook fa-fw fa-2x"></i>
-		</a>
-		<a href="https://google.com">
-			<i class="fa fa-google-plus fa-fw fa-2x"></i>
-		</a>
-		<a>
-			<i class="fa fa-envelope-o fa-fw fa-2x"></i>
-		</a>
-		<a ng-click="toggle()">
-		    <i ng-class="showingInlineDefinitions ? 'fa fa-toggle-on' : 'fa fa-toggle-off'" class="fa-fw fa-2x">
-		    	<md-tooltip>
-		    		Inline definitions
-		    	</md-tooltip>
-		    </i>
-		</a>
-	</div>
+  <div class="article">
+    <div class="imageWrapper">
+      <img src="http://lorempixel.com/800/450"></img>
+    </div>
+    <div class="article_content">
+      <dictionary-popover></dictionary-popover>
+      <div dir-phrase class="phrase" p="phrase"
+           showing-inline-definitions="showingInlineDefinitions"
+           dictionary-popover="dictionaryPopover"
+           article-level="articleLevel"
+           ng-repeat="phrase in sample.article track by $index">
+      </div>
+      <article-slider></article-slider>
+    </div>
+  </div>
+  <div class="articleIcons">
+    <a>
+      <i class="fa fa-heart fa-fw fa-2x"></i>
+    </a>
+    <a>
+      <i class="fa fa-comment fa-fw fa-2x"></i>
+    </a>
+    <a href="https://twitter.com">
+      <i class="fa fa-twitter fa-fw fa-2x"></i>
+    </a>
+    <a href="https://facebook.com">
+      <i class="fa fa-facebook fa-fw fa-2x"></i>
+    </a>
+    <a href="https://google.com">
+      <i class="fa fa-google-plus fa-fw fa-2x"></i>
+    </a>
+    <a>
+      <i class="fa fa-envelope-o fa-fw fa-2x"></i>
+    </a>
+    <a ng-click="toggle()">
+      <i ng-class="showingInlineDefinitions ? 'fa fa-toggle-on' : 'fa fa-toggle-off'" class="fa-fw fa-2x">
+        <md-tooltip>
+          Inline definitions
+        </md-tooltip>
+      </i>
+    </a>
+  </div>
 </div>

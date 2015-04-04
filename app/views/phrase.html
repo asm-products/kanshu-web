@@ -1,4 +1,4 @@
-<span class="pinyin">
+<span class="pinyin" ng-class="phrase.hskLevel > articleLevel.hsk || (articleLevel.hsk < 7 && phrase.hskLevel == -1 ? 'showPinyin' : 'hidePinyin')">
 	{{phrase.type == 'punctuation' ? '&nbsp;' : phrase.pronunciation}}
 </span>
 <div>
