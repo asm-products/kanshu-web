@@ -8,7 +8,7 @@
  */
 angular.module('kanshuWebApp').directive('articleSlider', function () {
   return {
-    template: 'wǒ <md-slider md-discrete ng-model="articleLevel.hsk" min="0" max="7"></md-slider>{{articleLevel.hsk}} 我',
+    templateUrl: '../../views/slider.html',
     restrict: 'E'
   };
 });
