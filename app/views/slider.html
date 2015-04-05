@@ -1,5 +1,7 @@
-<div id="language-level">
-  <p>Pinyin</p>
+<div id="language-level-anchor"></div>
+<div sticky id="language-level">
+  <p ng-show="articleLevel.hsk === 0">All pinyin</p>
+  <p ng-show="articleLevel.hsk > 0 && articleLevel.hsk < 7">HSK Level {{articleLevel.hsk}}</p>
+  <p ng-show="articleLevel.hsk === 7">No pinyin</p>
   <md-slider class="hsk-slider" md-discrete ng-model="articleLevel.hsk" min="0" max="7" aria-label="hsk-level"></md-slider>
-  <p>Hanzi</p>
 </div>
