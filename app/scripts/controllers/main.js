@@ -61,8 +61,13 @@ angular.module('kanshuWebApp')
             });
         };
 
-    $scope.showUserMenu = function () {
-        $scope.accountMenu.visible = !$scope.accountMenu.visible
+    $scope.showUserMenu = function ($event) {
+        $scope.accountMenu.visible = !$scope.accountMenu.visible;
+        $event.stopPropagation();
+    }
+
+    $scope.dismissAll = function () {
+        $scope.accountMenu.visible = false;
     }
   $rootScope.showLoginDialog = $scope.showLoginDialog;
   }

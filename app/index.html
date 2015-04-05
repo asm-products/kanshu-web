@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="kanshuWebApp" layout="column" layout-fill ng-controller="MainCtrl">
+  <body ng-app="kanshuWebApp" layout="column" layout-fill ng-controller="MainCtrl" ng-click="dismissAll()">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -42,7 +42,7 @@
                 Login
             </md-button>
             <a href="#/" ng-show="isLoggedIn" ng-cloak>
-              <img src="images/user.png" ng-click="showUserMenu()"></img>
+              <img src="images/user.png" ng-click="showUserMenu($event)"></img>
             </a>
           </span>
         </div>
