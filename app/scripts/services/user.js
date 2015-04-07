@@ -37,28 +37,36 @@ angular.module('kanshuWebApp')
     api.signUp = function(data, callback) {
         console.log('Call signup service', data);
         isLoggedIn = true;
-      callback();
-      return true;
+        callback();
+        return true;
     };
 
-    api.isLoggedIn = function () {
+    api.isLoggedIn = function() {
         return isLoggedIn;
-    }
+    };
 
-    api.getCurrentUser = function () {
-        if (isLoggedIn) return api.user;
-        else return null;
-    }
+    api.getCurrentUser = function() {
+        if(isLoggedIn){
+            return api.user;
+        }else{
+            return null;
+        }
+    };
 
-    api.getUserMetrics = function () {
-        if (!isLoggedIn) return null;
-        if (api.user.userMetrics) return api.user.userMetrics;
+    api.getUserMetrics = function() {
+        if(!isLoggedIn){ 
+            return null;
+        }
+        if(api.user.userMetrics){
+            return api.user.userMetrics;
+        } 
         api.user.userMetrics = {};
         console.log('Call user metrics service');
         api.user.userMetrics.articlesRead = 12;
         api.user.userMetrics.charactersSaved = 288;
         api.user.userMetrics.charactersMastered = 100;
         return api.user.userMetrics;
-    }
+    };
+
     return api;
   });

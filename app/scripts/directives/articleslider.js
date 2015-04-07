@@ -10,7 +10,8 @@ angular.module('kanshuWebApp').directive('articleSlider', function () {
   return {
     templateUrl: '../../views/slider.html',
     restrict: 'E',
-    link: (function(scope, elem) {
+    link: function(scope, elem) {
+      var $window = angular.element(window);
       var anchor = elem.children()[0];
       var layout = angular.element(elem.children()[1]);
       var layoutHeight = layout[0].getBoundingClientRect().height;
@@ -22,11 +23,11 @@ angular.module('kanshuWebApp').directive('articleSlider', function () {
 
       var isPinned = false;
 
-      window.addEventListener('scroll', function() {
+      $window.on('scroll', function() {
         calculateScroll(anchor.getBoundingClientRect());
       });
 
-      window.addEventListener('resize', function() {
+      $window.on('resize', function() {
         var boundingRect = anchor.getBoundingClientRect();
         var newWidth = boundingRect.width;
         initialProperties.width = newWidth;
@@ -64,6 +65,6 @@ angular.module('kanshuWebApp').directive('articleSlider', function () {
           isPinned = false;
         }
       }
-    })
+    }
   };
 });
