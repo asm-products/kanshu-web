@@ -12,9 +12,10 @@ angular.module('kanshuWebApp')
       templateUrl: '../../views/phrase.html',
       restrict: 'A',
       scope: {
-      	phrase: '=p',
-      	showingInlineDefinitions: '=',
-      	dictionaryPopover: '=',
+        phrase: '=p',
+        showingInlineDefinitions: '=',
+        dictionaryPopover: '=',
+        articleLevel: '='
       },
       link: function postLink(scope, element) {
 

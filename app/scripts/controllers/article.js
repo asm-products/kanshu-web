@@ -13,6 +13,8 @@ angular.module('kanshuWebApp')
 
     $scope.dictionaryPopover = {entry: 'Hi', position: {"top": 0, "left": 0}, visible: false};
 
+    $scope.articleLevel = {hsk: 0};
+
     $scope.toggle = function() {
     	$scope.showingInlineDefinitions = !$scope.showingInlineDefinitions;
     	if($scope.showingInlineDefinitions){

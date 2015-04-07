@@ -1,0 +1,28 @@
+#language-level {
+  display: flex;
+  background: -webkit-linear-gradient(top, white 50%, rgba(255,255,255,0.3) 99%);
+  background: linear-gradient(to top, white 50%, rgba(255,255,255,0.3) 99%);
+
+  p {
+    padding-top: 7px;
+    flex: 100;
+  }
+
+  .hsk-slider {
+    width: 82%;
+    margin-right: 10px;
+  }
+
+  .md-track-ticks {
+  }
+
+  md-slider .md-sign {
+    display: none;
+    top: -26px;
+  }
+
+  md-slider .md-thumb {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}

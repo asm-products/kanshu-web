@@ -1,4 +1,4 @@
-<span class="pinyin">
+<span class="pinyin" ng-class="phrase.hskLevel > articleLevel.hsk || (articleLevel.hsk < 7 && phrase.hskLevel == -1) ? 'showPinyin' : 'hidePinyin'">
 	{{phrase.type == 'punctuation' ? '&nbsp;' : phrase.pronunciation}}
 </span>
 <div>
@@ -6,6 +6,8 @@
 	{{phrase.type == 'punctuation' ? phrase.content : phrase.displayText}}
 </span>
 </div>
-<p class="inlineDef" ng-class="showingInlineDefinitions? 'showInlineDef': 'hiddenInlineDef'">
+<p class="inlineDef"
+   ng-class="[showingInlineDefinitions && articleLevel.hsk < 7 ? 'showInlineDef': 'hiddenInlineDef',
+              phrase.hskLevel > articleLevel.hsk || (articleLevel.hsk < 7 && phrase.hskLevel == -1) ? 'showPinyin' : 'hidePinyin']">
 	{{phrase.type == 'punctuation' ? '&nbsp;' : phrase.definitions[0]}}
 </p>
