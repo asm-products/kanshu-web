@@ -1,7 +1,7 @@
 #language-level {
   display: flex;
-  background: -webkit-linear-gradient(top, white 80%, rgba(255,255,255,0.3) 99%);
-  background: linear-gradient(to top, white 80%, rgba(255,255,255,0.3) 99%);
+  background: -webkit-linear-gradient(top, white 50%, rgba(255,255,255,0.3) 99%);
+  background: linear-gradient(to top, white 50%, rgba(255,255,255,0.3) 99%);
 
   p {
     padding-top: 7px;
@@ -26,4 +26,3 @@
     transform: scale(0.9);
   }
 }
-
